@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_09_215424) do
+ActiveRecord::Schema.define(version: 2021_05_10_144810) do
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.text "description", default: "", null: false
+    t.string "image_id", default: "", null: false
+    t.integer "user_id"
+    t.integer "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "country_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
