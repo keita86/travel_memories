@@ -8,11 +8,13 @@
     </div>
     <div class="nav col d-flex justify-content-end">
     <% if user_signed_in? %>
-      <li class="navmenu mr-2"></li>
+      <li class="navmenu mr-2">
+        <%= link_to "Memory", blogs_path, class: "fas fa-plane btn btn-outline-secondary btn-lg" %>
+      </li>
       <li class="navmenu mr-2"></li>
       <li class="navmenu mr-2"></li>
       <li class="navmenu mr-2">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-plane-departure btn btn-outline-secondary btn-lg" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "fas fa-plane-departure btn btn-outline-secondary btn-lg" %>
       </li>
     <% else %>
       <li class="navmenu mr-2">

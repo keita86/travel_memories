@@ -1,0 +1,18 @@
+<div class="container blog border-left border-right border-dark">
+  <div class="row">
+    <div class="col my-5">
+      <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus btn btn-outline-success btn-lg" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <% @blogs.each do |blog| %>
+      <div>
+        <%= attachment_image_tag blog, :image, width: '25%' %>
+        <p>title：<%= blog.title %></p>
+        <p>ユーザーネーム：<%= blog.user.name %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
