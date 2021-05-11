@@ -8,9 +8,12 @@
     <div class="col">
       <% @blogs.each do |blog| %>
       <div>
-        <%= attachment_image_tag blog, :image, width: '25%' %>
+        <%= link_to blog_path(blog) do %>
+        <%= attachment_image_tag blog, :image, width: '25%', height: '25%'  %>
+        <% end %>
         <p>title：<%= blog.title %></p>
         <p>ユーザーネーム：<%= blog.user.name %></p>
+        <p><%= link_to "#{blog.blog_comments.count} コメント", blog_path(blog.id) %></p>
       </div>
       <% end %>
     </div>

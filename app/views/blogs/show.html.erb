@@ -1,0 +1,57 @@
+<div class="container memo blog  blog border-left border-right border-dark">
+  <div class="row py-5 border-bottom border-dark">
+    <div class="col offset-1">
+      <%= attachment_image_tag(@blog.user, :profile_image_id, :fill, 100, 100,  fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-3 mt-3">
+          <h2><%= @blog.user.name %></h2>
+        </div>
+        <div class="col-sm-3 mt-1">
+          <h4>follow</h4>
+          <h4>follower</h4>
+        </div>
+      </div>
+      <div class="row">
+        <%= @blog.user.introduction %>
+      </div>
+    </div>
+  </div>
+  <div class="row py-5 border-bottom border-dark">
+    <div class="col offset-1">
+      <ul class="list-unstyled">
+        <li><%= attachment_image_tag @blog, :image, width: '90%', height: '90%' %></li>
+        <li><h2><%= @blog.title %></h2></li>
+        <li><h4><%= @blog.description %></h4></li>
+        <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+      </ul>
+      <% if @blog.user == current_user %>
+      <%= link_to "削除", blog_path(@blog), method: :delete %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col offset-1 d-flex align-items-start flex-column">
+      <p>コメント件数：<%= @blog.blog_comments.count %></p>
+      <% @blog.blog_comments.each do |blog_comment| %>
+        <%= attachment_image_tag(blog_comment.user, :profile_image_id, :fill, fallback: "no_image.jpg", :size => '30x30', class: "rounded-circle") %>
+        <%= blog_comment.user.name %>
+        <%= blog_comment.created_at.strftime('%Y/%m/%d') %><%= blog_comment.comment %>
+        <% if blog_comment.user == current_user %>
+          <%= link_to "削除", blog_blog_comment_path(blog_comment.blog, blog_comment), method: :delete %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col offset-1">
+      <div class="new-comment">
+        <%= form_with(model:[@blog, @blog_comment], local: true) do |f| %>
+        <%= f.text_area :comment, rows:'3',placeholder: "コメント" %>
+        <%= f.submit "送信する" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
