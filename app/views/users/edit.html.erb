@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4>Edit User</h4>
+      <%= form_with model: @user, local:true do |f| %>
+        <h4>プロフィール画像</h4>
+        <%= f.attachment_field :profile_image %>
+        <h4>名前</h4>
+        <%= f.text_field :name %>
+        <h4>紹介文</h4>
+        <%= f.text_area :introduction %>
+        <%= f.submit 'User Update' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <div class="container memo blog  blog border-left border-right border-dark">
   <div class="row py-5 border-bottom border-dark">
     <div class="col offset-1">
-      <%= attachment_image_tag(@blog.user, :profile_image_id, :fill, 100, 100,  fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
+      <%= attachment_image_tag(@blog.user, :profile_image,  fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
     </div>
     <div class="col-sm-7">
       <div class="row">
@@ -44,7 +44,7 @@
     <div class="col offset-1 d-flex align-items-start flex-column">
       <p>コメント件数：<%= @blog.blog_comments.count %></p>
       <% @blog.blog_comments.each do |blog_comment| %>
-        <%= attachment_image_tag(blog_comment.user, :profile_image_id, :fill, fallback: "no_image.jpg", :size => '30x30', class: "rounded-circle") %>
+        <%= attachment_image_tag(blog_comment.user, :profile_image, fallback: "no_image.jpg", :size => '30x30', class: "rounded-circle") %>
         <%= blog_comment.user.name %>
         <%= blog_comment.created_at.strftime('%Y/%m/%d') %><%= blog_comment.comment %>
         <% if blog_comment.user == current_user %>

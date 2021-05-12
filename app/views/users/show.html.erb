@@ -1,0 +1,39 @@
+<div class="container memo blog  blog border-left border-right border-dark">
+  <div class="row py-5 border-bottom border-dark">
+    <div class="col offset-1">
+      <%= attachment_image_tag(@user, :profile_image, fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
+    <% if @user.id == current_user.id %>
+      <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+    <% end %>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-3 mt-3">
+          <h2><%= @user.name %></h2>
+        </div>
+        <div class="col-sm-3 mt-1">
+          <h4>follow</h4>
+          <h4>follower</h4>
+        </div>
+      </div>
+      <div class="row mr-5">
+        <%= @user.introduction %>
+      </div>
+    </div>
+  </div>
+  <div class="row py-5 border-bottom border-dark">
+    <div class="col offset-1">
+      <% @user.blogs.each do |blog| %>
+      <ul class="list-unstyled">
+        <li><%= attachment_image_tag blog, :image, width: '90%', height: '90%' %></li>
+        <li><h2><%= blog.title %></h2></li>
+        <li><h4><%= blog.description %></h4></li>
+        <li><h4><%= blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+      </ul>
+      <% if @user == current_user %>
+      <%= link_to "削除", blog_path(blog), method: :delete %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
