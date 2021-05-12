@@ -6320,3 +6320,1107 @@ Processing by BlogsController#show as HTML
 Completed 200 OK in 111ms (Views: 106.9ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 01:31:09 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 2]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/index.html.erb:16
+  Rendered blogs/index.html.erb within layouts/application (125.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 540ms (Views: 517.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/blogs/5" for 126.91.74.95 at 2021-05-12 01:31:13 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/show.html.erb:36
+  [1m[36mBlogComment Load (0.2ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/show.html.erb:37
+  Rendered blogs/show.html.erb within layouts/application (22.0ms)
+  Rendered layouts/_header.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 70.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 01:31:18 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 2]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/index.html.erb:16
+  Rendered blogs/index.html.erb within layouts/application (26.3ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (6.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 76ms (Views: 72.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 01:31:19 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:36
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  Rendered blogs/show.html.erb within layouts/application (20.8ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 77ms (Views: 73.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 01:31:22 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 2]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/index.html.erb:16
+  Rendered blogs/index.html.erb within layouts/application (26.7ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 82.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 01:31:23 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:36
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  Rendered blogs/show.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 99ms (Views: 95.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 01:31:25 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 2]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/index.html.erb:16
+  Rendered blogs/index.html.erb within layouts/application (24.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 69.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogs/5" for 126.91.74.95 at 2021-05-12 01:32:04 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/show.html.erb:36
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/show.html.erb:37
+  Rendered blogs/show.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 68.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 01:32:07 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 2]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/index.html.erb:16
+  Rendered blogs/index.html.erb within layouts/application (24.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (5.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 72.0ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateFavorites (20210512014056)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210512014056_create_favorites.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "blog_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210512014056_create_favorites.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210512014056"]]
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 02:25:59 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:36
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  Rendered blogs/show.html.erb within layouts/application (2158.6ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 2327ms (Views: 2258.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 02:26:02 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:36
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  Rendered blogs/show.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 91ms (Views: 85.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/attachments/ad87639c4b2c1ba6e7088fecc05a4a00a6dea77d/store/82b5d77557fa3642eb5f193c70e0574854ef0c5880a576a59cf4e58254ed/image" for 126.91.74.95 at 2021-05-12 02:26:02 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-05-12 02:26:02 +0000] GET "/ad87639c4b2c1ba6e7088fecc05a4a00a6dea77d/store/82b5d77557fa3642eb5f193c70e0574854ef0c5880a576a59cf4e58254ed/image" 200 31.1ms
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:48:11 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:36
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:50
+  Rendered blogs/show.html.erb within layouts/application (64.1ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 208ms (Views: 156.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:48:50 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:48:52 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"FjpLIgWCTHIkjRSqULwm4n/Wv2UWRVCcDuTjV3T80PJQ5HeO/0EYVcHjSxTd7d/DRWhixC5UpEDN26wXlN9Xlg==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mFavorite Create (16.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["blog_id", 1], ["created_at", "2021-05-12 03:48:52.862933"], ["updated_at", "2021-05-12 03:48:52.862933"]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 39ms (ActiveRecord: 21.8ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:48:52 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:48:55 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"31srtrVSt9M0h4J4PofUmo/+LtiEauQgRy+KbUZsaXeZhRcaT5Hj9NHp3caz1i27tUDzebx7EPyEEMUtpk/uEw==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `favorite' for #<User:0x00007f633dadbf40>
+Did you mean?  favorites
+               favorites=):
+  
+app/controllers/favorites_controller.rb:11:in `destroy'
+Started DELETE "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:49:14 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"31srtrVSt9M0h4J4PofUmo/+LtiEauQgRy+KbUZsaXeZhRcaT5Hj9NHp3caz1i27tUDzebx7EPyEEMUtpk/uEw==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `favorite' for #<User:0x00007f635044b870>
+Did you mean?  favorites
+               favorites=):
+  
+app/controllers/favorites_controller.rb:11:in `destroy'
+Started DELETE "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:49:21 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"31srtrVSt9M0h4J4PofUmo/+LtiEauQgRy+KbUZsaXeZhRcaT5Hj9NHp3caz1i27tUDzebx7EPyEEMUtpk/uEw==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `favorite' for #<User:0x00007f63443726d0>
+Did you mean?  favorites
+               favorites=):
+  
+app/controllers/favorites_controller.rb:11:in `destroy'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:49:43 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.2ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (34.9ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 90ms (Views: 63.4ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:49:45 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"idV/4s9XqNhoCSETfVFszQu/1kfkmhF2IRTDG4uU4THPC0NONZT8/41nfq3wAJXsMQEL5tyL5ariK4xba7dmVQ==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."blog_id" = ? LIMIT ?[0m  [["user_id", 1], ["blog_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[36mFavorite Destroy (1.7ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 23ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:49:46 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:49:48 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"PHtSbFKSxBQCstd4iIdJQcCb1eTuyUR0gJy0wanWcZt6pW7AqFGQM+fciMYF1rBg+iUIRdbYsKhDo/uBSfX2/w==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mFavorite Create (1.1ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["blog_id", 1], ["created_at", "2021-05-12 03:49:48.020164"], ["updated_at", "2021-05-12 03:49:48.020164"]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 17ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:49:48 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:51:22 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:51:24 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5lQhMSdrru6POHNhk/aQnfvKO0kMUPk3hCu4NPHFS1ygih2d3aj6yWpWLN8ep2m8wXTm6DRBDetHFPd0EebMOA==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."blog_id" = ? LIMIT ?[0m  [["user_id", 1], ["blog_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[36mFavorite Destroy (1.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 16ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:51:24 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 41.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:51:26 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"BndJSJb4dEZNl48NKQV7KrOrwYrTxE37JGnKKH0lwnhAqXXkbDsgYaj50LOkVIILiRUcK+vVuSfnVoVonQZFHA==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mFavorite Create (1.0ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["blog_id", 1], ["created_at", "2021-05-12 03:51:26.705896"], ["updated_at", "2021-05-12 03:51:26.705896"]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 16ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:51:26 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 41.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:52:28 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/Travel_Memories/app/views/blogs/show.html.erb:34: syntax error, unexpected tLABEL, expecting '='
+...( @blog.favorites.count, class: "text-danger" );@output_buff...
+...                         ^~~~~~
+/home/ec2-user/environment/Travel_Memories/app/views/blogs/show.html.erb:38: syntax error, unexpected tLABEL, expecting '='
+...( @blog.favorites.count, class: "text-dark" );@output_buffer...
+...                         ^~~~~~):
+  
+app/views/blogs/show.html.erb:34: syntax error, unexpected tLABEL, expecting '='
+app/views/blogs/show.html.erb:38: syntax error, unexpected tLABEL, expecting '='
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:52:44 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT({:class=>"text-danger"}) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  Rendered blogs/show.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: unrecognized token: "{": SELECT COUNT({:class=>"text-danger"}) FROM "favorites" WHERE "favorites"."blog_id" = ?):
+    31:       <% end %>
+    32:         <% if @blog.favorited_by?(current_user) %>
+    33:           <%= link_to blog_favorites_path(@blog), method: :delete do %>
+    34:             <i class="fas fa-heart text-danger"></i><%= @blog.favorites.count class: "text-danger" %>
+    35:           <% end %>
+    36:         <% else %>
+    37:           <%= link_to blog_favorites_path(@blog), method: :post do %>
+  
+app/views/blogs/show.html.erb:34:in `block in _app_views_blogs_show_html_erb___3264850385399060589_51640440'
+app/views/blogs/show.html.erb:33:in `_app_views_blogs_show_html_erb___3264850385399060589_51640440'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:53:12 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/Travel_Memories/app/views/blogs/show.html.erb:34: syntax error, unexpected '='
+...( @blog.favorites.count, class="text-danger" );@output_buffe...
+...                              ^
+/home/ec2-user/environment/Travel_Memories/app/views/blogs/show.html.erb:38: syntax error, unexpected '='
+...( @blog.favorites.count, class="text-dark" );@output_buffer....
+...                              ^):
+  
+app/views/blogs/show.html.erb:34: syntax error, unexpected '='
+app/views/blogs/show.html.erb:38: syntax error, unexpected '='
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:53:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:53:39 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"taNMuFD9M7ZwYeLjk7eBkS83bshe/JR/VCYEFvN4EdzzfXAUqj5nkZUPvV0e5niwFYmzaWbtYKOXGUtWE1uWuA==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."blog_id" = ? LIMIT ?[0m  [["user_id", 1], ["blog_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[36mFavorite Destroy (1.1ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 15ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:53:39 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:53:42 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"o5+tUir7pajhp41c3tTXZnPzJWkWq6zvPuLH4JyLoLHlQZH+0DjxjwTJ0uJThS5HSU34yC66WDP93YigfKgn1Q==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mFavorite Create (1.0ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["blog_id", 1], ["created_at", "2021-05-12 03:53:42.257271"], ["updated_at", "2021-05-12 03:53:42.257271"]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 16ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:53:42 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:53:48 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"b0cqyI9SUXZhtVN+UyK0jX66WRIOqFTZyRdq3wnZvQcpmRZkdZEFUYTbDMDec02sRASEsza5oAUKKCWf6fo6Yw==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."blog_id" = ? LIMIT ?[0m  [["user_id", 1], ["blog_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[36mFavorite Destroy (1.0ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 15ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:53:48 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:38
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/blogs/1/favorites" for 126.91.74.95 at 2021-05-12 03:53:51 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"5I0DSiH9WroiaE+7qeTFAX6KJM645VxAsZpdsoUOnouiUz/m2z4OnccGEAUktTwgRDT5b4D0qJxypRLyZS0Z7w==", "blog_id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mFavorite Create (1.0ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["blog_id", 1], ["created_at", "2021-05-12 03:53:51.024249"], ["updated_at", "2021-05-12 03:53:51.024249"]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 14ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:53:51 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 03:53:53 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 2]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 3]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 4]]
+  ↳ app/views/blogs/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/index.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 5]]
+  ↳ app/views/blogs/index.html.erb:16
+  Rendered blogs/index.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 03:54:40 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-12 03:54:52 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-12 03:55:12 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:45
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:47
+  Rendered blogs/show.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.8ms)
+
+
