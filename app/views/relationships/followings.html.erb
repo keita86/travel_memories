@@ -1,8 +1,12 @@
 <div class="container blog list_memo py-5  border-left border-right border-dark">
   <div class="row">
     <div class="col offset-1 mb-2">
-      <h1>Users</h1>
+      <h1>Follow users</h1>
     </div>
   </div>
-  <%= render 'users/list', users: @users %>
+  <% if @users.exists? %>
+    <%= render 'users/list', users: @users %>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>
 </div>

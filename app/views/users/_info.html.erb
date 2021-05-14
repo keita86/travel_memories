@@ -1,0 +1,32 @@
+  <div class="row py-5 border-bottom border-dark">
+    <div class="col offset-1">
+      <%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
+    <% if user.id == current_user.id %>
+      <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
+    <% else %>
+      <% if current_user.following?(user) %>
+        <%= link_to "Unfollow", user_relationships_path(user.id), method: :delete %>
+      <% else %>
+        <%= link_to "Follow", user_relationships_path(user.id), method: :post %>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-3 mt-3">
+          <h2><%= user.name %></h2>
+        </div>
+        <div class="col-sm-3 mt-1">
+          <%= link_to user_followings_path(user) do %>
+            <h4>follow<%= user.followings.count %></h4>
+          <% end %>
+          <%= link_to user_followers_path(user) do %>
+            <h4>follower<%= user.followers.count %></h4>
+          <% end %>
+        </div>
+      </div>
+      <div class="row mr-5">
+        <%= user.introduction %>
+      </div>
+    </div>
+  </div>
