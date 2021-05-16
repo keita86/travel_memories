@@ -18,6 +18,7 @@
 !/tmp/.keep
 
 # Ignore Byebug command history file.
+/public/assets
 .byebug_history
 
 /.env
