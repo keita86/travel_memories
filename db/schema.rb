@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_071800) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title", default: "", null: false
-    t.text "description", default: "", null: false
+    t.text "description", null: false
     t.string "image_id", default: "", null: false
     t.integer "user_id"
     t.integer "country_id"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_071800) do
     t.datetime "remember_created_at"
     t.string "name", default: "", null: false
     t.string "profile_image_id"
-    t.text "introduction", default: "", null: false
+    t.text "introduction", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
