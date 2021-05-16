@@ -14703,3 +14703,231 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 65ms (Views: 60.3ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/" for 126.91.74.95 at 2021-05-16 00:05:54 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (42.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 2284ms (Views: 2273.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for 126.91.74.95 at 2021-05-16 00:05:57 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_info.html.erb (4.0ms)
+  Rendered users/show.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Refile.secret_key was not set.
+
+Please add the following to your Refile configuration and restart your application:
+
+```
+Refile.secret_key = '54218e4bb3742e89b75755af7589412ea1937e8d41b98ad6b84e3b059dee0424056bfff4f1c1a57339f794a11c5abef1536cf02b8724f13178cb6b590e656e10'
+```
+
+):
+    1:   <div class="row py-5 border-bottom border-dark">
+    2:     <div class="col offset-1">
+    3:       <%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
+    4:     <% if user.id == current_user.id %>
+    5:       <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
+    6:     <% else %>
+  
+app/views/users/_info.html.erb:3:in `_app_views_users__info_html_erb__1859668170170784944_70134668812180'
+app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__203218680412777154_70134668753840'
+Started GET "/users/1" for 126.91.74.95 at 2021-05-16 00:07:27 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_info.html.erb (2.3ms)
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Refile.secret_key was not set.
+
+Please add the following to your Refile configuration and restart your application:
+
+```
+Refile.secret_key = 'da50dd1fa5cd6686badadb3b5727270084a199dcf23774d18a4a51a976e378978e1d3515a831a0bcf1f79978c2373d721b264e39da286b010b3b0dda88bd0714'
+```
+
+):
+    1:   <div class="row py-5 border-bottom border-dark">
+    2:     <div class="col offset-1">
+    3:       <%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
+    4:     <% if user.id == current_user.id %>
+    5:       <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
+    6:     <% else %>
+  
+app/views/users/_info.html.erb:3:in `_app_views_users__info_html_erb__1859668170170784944_70134575923540'
+app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__203218680412777154_70134575729080'
+Started GET "/" for 126.91.74.95 at 2021-05-16 00:07:35 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for 126.91.74.95 at 2021-05-16 00:07:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_info.html.erb (1.3ms)
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Refile.secret_key was not set.
+
+Please add the following to your Refile configuration and restart your application:
+
+```
+Refile.secret_key = 'e56d5a6c5750cb6efd6ccc9a9a8f8ad9194f5d340b091a4023a670e2b7a4a90eb6fee68ed0cb0aa8358a044aa47559690e721038088106e7e0006e4e7f16c728'
+```
+
+):
+    1:   <div class="row py-5 border-bottom border-dark">
+    2:     <div class="col offset-1">
+    3:       <%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg", :size => '150x150', class: "rounded-circle" ) %>
+    4:     <% if user.id == current_user.id %>
+    5:       <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
+    6:     <% else %>
+  
+app/views/users/_info.html.erb:3:in `_app_views_users__info_html_erb__1859668170170784944_70134500731560'
+app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__203218680412777154_70134573278600'
+Started GET "/" for 126.91.74.95 at 2021-05-16 00:08:35 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:10
+  Rendered layouts/_header.html.erb (72.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 348ms (Views: 338.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/1" for 126.91.74.95 at 2021-05-16 00:08:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (31.0ms)
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (54.2ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 107ms (Views: 99.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/attachments/bf26629659dc8ba1e667c20212137c9cff38a2d3/store/e377dc188b0196803f91fef9f3057d4456a24dcaebbf1fd34b6b69b67ff0/profile_image" for 126.91.74.95 at 2021-05-16 00:08:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/025ed7645eafa85f657c9e82f290dafe94341d13/store/d8f6740af4605fca967b972160765f03d1d37ffeb7b3b4be432f499b2a56/image" for 126.91.74.95 at 2021-05-16 00:08:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/d92e7ebf062e7beec2f937672e65c609a5e0dcc1/store/82b5d77557fa3642eb5f193c70e0574854ef0c5880a576a59cf4e58254ed/image" for 126.91.74.95 at 2021-05-16 00:08:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/0510ea2bbef626d2db3211a156eb467946014b28/store/3078634d35b4afc8412e41be39ece17142f6803b26de25deabaa566382c6/image" for 126.91.74.95 at 2021-05-16 00:08:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/d80deb8a3a68e4b94979cccbaa566ea3e7c7c83d/store/26aa974dfe8b31a0cc6d5666ed48d6f16d976e27b307fa7bc0888c67f480/image" for 126.91.74.95 at 2021-05-16 00:08:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-05-16 00:08:37 +0000] GET "/d92e7ebf062e7beec2f937672e65c609a5e0dcc1/store/82b5d77557fa3642eb5f193c70e0574854ef0c5880a576a59cf4e58254ed/image" 200 14.0ms
+
+Started GET "/attachments/b34466c132f925179d3a498f5ce84f462f832e48/store/d9d291ada9401b00c756cf97c5b3a5345c28391330868b8446559bd78e9d/image" for 126.91.74.95 at 2021-05-16 00:08:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-05-16 00:08:37 +0000] GET "/0510ea2bbef626d2db3211a156eb467946014b28/store/3078634d35b4afc8412e41be39ece17142f6803b26de25deabaa566382c6/image" 200 13.3ms
+
+Refile::App: [2021-05-16 00:08:37 +0000] GET "/025ed7645eafa85f657c9e82f290dafe94341d13/store/d8f6740af4605fca967b972160765f03d1d37ffeb7b3b4be432f499b2a56/image" 200 22.6ms
+
+Refile::App: [2021-05-16 00:08:37 +0000] GET "/bf26629659dc8ba1e667c20212137c9cff38a2d3/store/e377dc188b0196803f91fef9f3057d4456a24dcaebbf1fd34b6b69b67ff0/profile_image" 200 28.3ms
+
+Refile::App: [2021-05-16 00:08:37 +0000] GET "/b34466c132f925179d3a498f5ce84f462f832e48/store/d9d291ada9401b00c756cf97c5b3a5345c28391330868b8446559bd78e9d/image" 200 8.2ms
+
+Refile::App: [2021-05-16 00:08:37 +0000] GET "/d80deb8a3a68e4b94979cccbaa566ea3e7c7c83d/store/26aa974dfe8b31a0cc6d5666ed48d6f16d976e27b307fa7bc0888c67f480/image" 200 25.3ms
+
+Started GET "/users" for 126.91.74.95 at 2021-05-16 00:08:39 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/_list.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_list.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_list.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/views/users/_list.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/users/_list.html.erb:23
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  Rendered users/_list.html.erb (18.1ms)
+  Rendered users/index.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/attachments/8f945e20be22d7e8bfc90eca8426383ff1c7f4ba/store/3c772750aaa7f81a8115769f870aea1573a0d00930d94f20acefb663f959/profile_image" for 126.91.74.95 at 2021-05-16 00:08:39 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-05-16 00:08:39 +0000] GET "/8f945e20be22d7e8bfc90eca8426383ff1c7f4ba/store/3c772750aaa7f81a8115769f870aea1573a0d00930d94f20acefb663f959/profile_image" 200 5.6ms
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-16 00:08:41 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 62ms (Views: 58.0ms | ActiveRecord: 0.3ms)
+
+
