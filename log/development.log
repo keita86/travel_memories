@@ -22850,3 +22850,1802 @@ DEPRECATION WARNING: Dangerous query method (method whose arguments are used as 
 Completed 200 OK in 116ms (Views: 107.7ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/monthly_rank" for 126.91.74.95 at 2021-05-19 02:14:19 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by BlogsController#monthly_rank as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from monthly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:47)
+  Rendering blogs/monthly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/monthly_rank.html.erb:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  Rendered blogs/monthly_rank.html.erb within layouts/application (68.8ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 393ms (Views: 351.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/daily_rank" for 126.91.74.95 at 2021-05-19 02:14:22 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#daily_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from daily_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:37)
+  Rendering blogs/daily_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-19 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/daily_rank.html.erb:23
+  Rendered blogs/daily_rank.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 55ms (Views: 49.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/weekly_rank" for 126.91.74.95 at 2021-05-19 02:14:24 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#weekly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from weekly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:42)
+  Rendering blogs/weekly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/weekly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  Rendered blogs/weekly_rank.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 79ms (Views: 72.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/daily_rank" for 126.91.74.95 at 2021-05-19 02:27:44 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#daily_rank as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from daily_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:37)
+  Rendering blogs/daily_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-19 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/daily_rank.html.erb:23
+  Rendered blogs/daily_rank.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 92ms (Views: 86.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/monthly_rank" for 126.91.74.95 at 2021-05-19 02:27:51 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#monthly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from monthly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:47)
+  Rendering blogs/monthly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/monthly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  Rendered blogs/monthly_rank.html.erb within layouts/application (39.6ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 91ms (Views: 83.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/weekly_rank" for 126.91.74.95 at 2021-05-19 02:27:52 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#weekly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from weekly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:42)
+  Rendering blogs/weekly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (1.6ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/weekly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  Rendered blogs/weekly_rank.html.erb within layouts/application (27.4ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 73ms (Views: 66.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/daily_rank" for 126.91.74.95 at 2021-05-19 02:27:53 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#daily_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from daily_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:37)
+  Rendering blogs/daily_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-19 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/daily_rank.html.erb:23
+  Rendered blogs/daily_rank.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 66.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/weekly_rank" for 126.91.74.95 at 2021-05-19 02:27:54 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#weekly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from weekly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:42)
+  Rendering blogs/weekly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/weekly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  Rendered blogs/weekly_rank.html.erb within layouts/application (35.4ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 113ms (Views: 106.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/monthly_rank" for 126.91.74.95 at 2021-05-19 02:27:54 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#monthly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from monthly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:47)
+  Rendering blogs/monthly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/monthly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  Rendered blogs/monthly_rank.html.erb within layouts/application (35.1ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 107ms (Views: 100.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/weekly_rank" for 126.91.74.95 at 2021-05-19 02:27:55 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#weekly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from weekly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:42)
+  Rendering blogs/weekly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/weekly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  Rendered blogs/weekly_rank.html.erb within layouts/application (30.4ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 79.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/daily_rank" for 126.91.74.95 at 2021-05-19 02:27:56 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#daily_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from daily_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:37)
+  Rendering blogs/daily_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-19 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/daily_rank.html.erb:23
+  Rendered blogs/daily_rank.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/weekly_rank" for 126.91.74.95 at 2021-05-19 02:27:57 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#weekly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from weekly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:42)
+  Rendering blogs/weekly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/weekly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/weekly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-12 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/weekly_rank.html.erb:41
+  Rendered blogs/weekly_rank.html.erb within layouts/application (27.8ms)
+  Rendered layouts/_header.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 78ms (Views: 72.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/monthly_rank" for 126.91.74.95 at 2021-05-19 02:27:58 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#monthly_rank as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from monthly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:47)
+  Rendering blogs/monthly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/monthly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  Rendered blogs/monthly_rank.html.erb within layouts/application (26.8ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 64.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 02:32:54 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/6" for 126.91.74.95 at 2021-05-19 02:32:55 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (17.1ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 6], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:27
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:28
+  Rendered blogs/show.html.erb within layouts/application (51.3ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 116ms (Views: 93.3ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/blogs/6/favorites" for 126.91.74.95 at 2021-05-19 02:32:58 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vi/+5/Lt7AYXRvkaQ0rB6wLKabiejNiWA0cfTF/U9O530OdEVjNmVaa/qfyo+QKGpN1CeFR/C98KUIncrl+Cyg==", "blog_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:10
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."blog_id" = ? LIMIT ?[0m  [["user_id", 3], ["blog_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[36mFavorite Destroy (1.8ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/favorites_controller.rb:12
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:12
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/6
+Completed 302 Found in 24ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/blogs/6" for 126.91.74.95 at 2021-05-19 02:32:58 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.2ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 6], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:20
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:27
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:28
+  Rendered blogs/show.html.erb within layouts/application (22.5ms)
+  Rendered layouts/_header.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 82ms (Views: 76.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/blogs/6/favorites" for 126.91.74.95 at 2021-05-19 02:33:00 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"PtM7IoOuCwywVjTwBfsZaXsdz2hkUS1M83kVkmFp4/33LCKBJ3CBXwGvZBbuSNoE3QrkqK6i/gX6boMCkOKV2Q==", "blog_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[36mFavorite Create (1.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "blog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["blog_id", 6], ["created_at", "2021-05-19 02:33:00.389143"], ["updated_at", "2021-05-19 02:33:00.389143"]]
+  ↳ app/controllers/favorites_controller.rb:5
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:5
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/6
+Completed 302 Found in 15ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/blogs/6" for 126.91.74.95 at 2021-05-19 02:33:00 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.6ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 6], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:27
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 6]]
+  ↳ app/views/blogs/show.html.erb:28
+  Rendered blogs/show.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 66.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/monthly_rank" for 126.91.74.95 at 2021-05-19 02:33:02 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#monthly_rank as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from monthly_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:47)
+  Rendering blogs/monthly_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/monthly_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 1], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 2], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 3], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 4], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/monthly_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 5], ["created_at", "2021-05-01 00:00:00"], ["created_at", "2021-05-31 23:59:59.999999"]]
+  ↳ app/views/blogs/monthly_rank.html.erb:41
+  Rendered blogs/monthly_rank.html.erb within layouts/application (86.2ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 128ms (Views: 122.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/daily_rank" for 126.91.74.95 at 2021-05-19 02:33:04 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#daily_rank as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(favorites.blog_id) DESC". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from daily_rank at /home/ec2-user/environment/Travel_Memories/app/controllers/blogs_controller.rb:37)
+  Rendering blogs/daily_rank.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" INNER JOIN "favorites" ON "favorites"."blog_id" = "blogs"."id" WHERE "favorites"."created_at" BETWEEN ? AND ? GROUP BY "blogs"."id" ORDER BY count(favorites.blog_id) DESC LIMIT ?[0m  [["created_at", "2021-05-19 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"], ["LIMIT", 5]]
+  ↳ app/views/blogs/daily_rank.html.erb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/daily_rank.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."created_at" BETWEEN ? AND ?[0m  [["blog_id", 6], ["created_at", "2021-05-19 00:00:00"], ["created_at", "2021-05-19 23:59:59.999999"]]
+  ↳ app/views/blogs/daily_rank.html.erb:41
+  Rendered blogs/daily_rank.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 126.91.74.95 at 2021-05-19 02:43:25 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.9ms)
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 61.6ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeCountries (20210519104737)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acountries" ("id" integer NOT NULL PRIMARY KEY, "country_name" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acountries" ("id","country_name","created_at","updated_at")
+                     SELECT "id","country_name","created_at","updated_at" FROM "countries"[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:4
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE "countries"[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:4
+  [1m[35m (2.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeCountries (20210519104737)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acountries" ("id" integer NOT NULL PRIMARY KEY, "country_name" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acountries" ("id","country_name","created_at","updated_at")
+                     SELECT "id","country_name","created_at","updated_at" FROM "countries"[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "countries"[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeCountries (20210519104737)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acountries" ("id" integer NOT NULL PRIMARY KEY, "country_name" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acountries" ("id","country_name","created_at","updated_at")
+                     SELECT "id","country_name","created_at","updated_at" FROM "countries"[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "countries"[0m
+  ↳ db/migrate/20210519104737_change_countries.rb:3
+  [1m[35m (2.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+Started GET "/users/3" for 126.91.74.95 at 2021-05-19 10:53:55 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (350.1ms)
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (385.2ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 519ms (Views: 477.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 126.91.74.95 at 2021-05-19 10:53:56 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/_list.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_list.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_list.html.erb:23
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/views/users/_list.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/users/_list.html.erb:23
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 3], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/_list.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/_list.html.erb:23
+  Rendered users/_list.html.erb (27.4ms)
+  Rendered users/index.html.erb within layouts/application (29.5ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 82ms (Views: 77.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 10:53:57 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 79ms (Views: 73.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 126.91.74.95 at 2021-05-19 10:53:58 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.1ms)
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_header.html.erb (5.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 61.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:15:39 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 92ms (Views: 80.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 126.91.74.95 at 2021-05-19 11:15:40 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (133.1ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 187ms (Views: 183.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:15:49 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 90ms (Views: 86.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:15:50 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (15.6ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:27
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:28
+  Rendered blogs/show.html.erb within layouts/application (55.9ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 132ms (Views: 105.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/3" for 126.91.74.95 at 2021-05-19 11:16:53 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (11.1ms)
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:16:54 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for 126.91.74.95 at 2021-05-19 11:16:55 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 73ms (Views: 69.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:36:33 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 56ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 126.91.74.95 at 2021-05-19 11:36:34 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.4ms)
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 126.91.74.95 at 2021-05-19 11:36:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4bZ1uaOxymPSBbN3k1NYlQ9OjAJTus7No6/E6OvlDhIoSWwaB29AMGP845F44Jv4qVmnwplJHYSquFJ4Gm54Ng=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 126.91.74.95 at 2021-05-19 11:36:37 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 126.91.74.95 at 2021-05-19 11:36:39 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.1ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 81ms (Views: 80.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 126.91.74.95 at 2021-05-19 11:36:57 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MOeZhBzJ2rslkYU17d26Ksris6DSn5UhGa0hy3DqzRQZymlAe9W400FTy/aJ3vkezplG3YuUa7fVytAB1SMd1w==", "user"=>{"email"=>"ke4i2ta4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ke4i2ta4@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/users/1
+Completed 302 Found in 340ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/users/1" for 126.91.74.95 at 2021-05-19 11:36:57 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (7.9ms)
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:37:05 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 54ms (Views: 49.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:37:06 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (15.2ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:17
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:28
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  Rendered blogs/show.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 86ms (Views: 79.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/blogs/1/edit" for 126.91.74.95 at 2021-05-19 11:37:08 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:23
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 69ms (Views: 65.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/blogs/1" for 126.91.74.95 at 2021-05-19 11:37:11 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for BlogsController):
+  
+actionpack (5.2.6) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/blogs/1/edit" for 126.91.74.95 at 2021-05-19 11:37:33 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:23
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (45.6ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 125ms (Views: 96.5ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/blogs/1" for 126.91.74.95 at 2021-05-19 11:37:35 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dt1i2UGI+eF5xwqJ0c4+bUiNJlkqQ7hJhIbH59Ez1EAXAx7k3tD3mVunKGvbD9vRqxX71W43cQcw73ysVHCC8Q==", "blog"=>{"image"=>"{}", "title"=>"京都", "description"=>"銀閣寺", "country_name"=>"JP"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:27
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/blogs_controller.rb:28:in `update'
+Started PATCH "/blogs/1" for 126.91.74.95 at 2021-05-19 11:37:59 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dt1i2UGI+eF5xwqJ0c4+bUiNJlkqQ7hJhIbH59Ez1EAXAx7k3tD3mVunKGvbD9vRqxX71W43cQcw73ysVHCC8Q==", "blog"=>{"image"=>"{}", "title"=>"京都", "description"=>"銀閣寺", "country_name"=>"JP"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:27
+Unpermitted parameter: :country_name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[36mBlog Update (14.5ms)[0m  [1m[33mUPDATE "blogs" SET "image_id" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["image_id", "12b5fa011d6d99feefb16b56755a4a64e76a6c7903309bce44bddf3fec99"], ["updated_at", "2021-05-19 11:37:59.996833"], ["id", 1]]
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/blogs_controller.rb:28
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs
+Completed 302 Found in 69ms (ActiveRecord: 29.5ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:38:01 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:38:08 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (14.5ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:17
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:28
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  Rendered blogs/show.html.erb within layouts/application (37.7ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 154ms (Views: 115.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/blogs/1/edit" for 126.91.74.95 at 2021-05-19 11:38:11 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:23
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 68ms (Views: 63.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/blogs/1" for 126.91.74.95 at 2021-05-19 11:38:13 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0TjsmKAYN4BI9okgwRnw5emwzGeLJxD4Cl8k4pWiL/ew5pClP0A5+GqWq8LL2BVZCigR689T2ba+Np+pEOF5Rg==", "blog"=>{"image"=>"{}", "title"=>"京都", "description"=>"銀閣寺", "country_name"=>"JP"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:27
+Unpermitted parameter: :country_name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[36mBlog Update (3.0ms)[0m  [1m[33mUPDATE "blogs" SET "image_id" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["image_id", "12b5fa011d6d99feefb16b56755a4a64e76a6c7903309bce44bddf3fec99"], ["updated_at", "2021-05-19 11:38:13.102511"], ["id", 1]]
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/blogs_controller.rb:28
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 11.8ms)
+
+
+  
+NameError (undefined local variable or method `blog' for #<BlogsController:0x00007fe358169ac0>
+Did you mean?  @blog):
+  
+app/controllers/blogs_controller.rb:29:in `update'
+Started PATCH "/blogs/1" for 126.91.74.95 at 2021-05-19 11:38:21 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0TjsmKAYN4BI9okgwRnw5emwzGeLJxD4Cl8k4pWiL/ew5pClP0A5+GqWq8LL2BVZCigR689T2ba+Np+pEOF5Rg==", "blog"=>{"image"=>"{}", "title"=>"京都", "description"=>"銀閣寺", "country_name"=>"JP"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:27
+Unpermitted parameter: :country_name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[36mBlog Update (8.0ms)[0m  [1m[33mUPDATE "blogs" SET "image_id" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["image_id", "12b5fa011d6d99feefb16b56755a4a64e76a6c7903309bce44bddf3fec99"], ["updated_at", "2021-05-19 11:38:21.632005"], ["id", 1]]
+  ↳ app/controllers/blogs_controller.rb:28
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/blogs_controller.rb:28
+Redirected to https://f71003c3c8b44d9887d11ddc0157cd77.vfs.cloud9.ap-northeast-1.amazonaws.com/blogs/1
+Completed 302 Found in 52ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:38:22 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (11.7ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:28
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  Rendered blogs/show.html.erb within layouts/application (33.5ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 93ms (Views: 79.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1" for 126.91.74.95 at 2021-05-19 11:49:50 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (8.5ms)
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (20.4ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 107ms (Views: 99.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:49:51 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 66ms (Views: 62.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:49:52 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.4ms)
+  Rendered blogs/show.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `country_name' for #<Blog:0x00007fe3580af198>
+Did you mean?  country_id_change):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country_name %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307205705020'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:50:24 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (7.4ms)
+  Rendered blogs/show.html.erb within layouts/application (20.4ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries' for #<Blog:0x00007fe354d464a0>
+Did you mean?  country_id):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.countries.country_name %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307178772780'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:50:41 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.8ms)
+  Rendered blogs/show.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `country_name' for nil:NilClass):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country_id.country_name %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307272626840'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:51:02 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (8.1ms)
+  Rendered blogs/show.html.erb within layouts/application (344.2ms)
+Completed 500 Internal Server Error in 354ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `country_id' for #<#<Class:0x00007fe360116c78>:0x00007fe3587ab6e0>
+Did you mean?  country_select):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country_name(country_id) %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307209371580'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:51:13 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (1.8ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (9.1ms)
+  Rendered blogs/show.html.erb within layouts/application (25.1ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 2..4)):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country_name(country_select) %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307183513880'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:53:34 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (8.1ms)
+  Rendered blogs/show.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries' for #<Blog:0x0000000005063e20>
+Did you mean?  country_id):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.countries.country_name %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_42351200'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:54:01 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (7.7ms)
+  Rendered blogs/show.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `country_se' for #<Blog:0x00007fe358110600>
+Did you mean?  country_id
+               country_id=
+               country_id?):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country_se.country_name %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307205920080'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:54:17 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (8.8ms)
+  Rendered blogs/show.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries' for #<Blog:0x00007fe3585c2cc0>
+Did you mean?  country_id):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.countries.country_id %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307208367160'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:54:43 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (7.7ms)
+  Rendered blogs/show.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `country_name' for #<Blog:0x00007fe3554cea60>
+Did you mean?  country_id_change):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country_name %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307182720240'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:54:56 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (7.4ms)
+  Rendered blogs/show.html.erb within layouts/application (19.5ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `country' for #<Blog:0x00007fe35c2b8b70>
+Did you mean?  country_id):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307104725980'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:55:02 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (7.6ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:30
+  Rendered blogs/show.html.erb within layouts/application (22.5ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 76ms (Views: 70.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:55:24 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 57ms (Views: 53.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:55:24 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (7.7ms)
+  [1m[36mFavorite Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:12
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:30
+  Rendered blogs/show.html.erb within layouts/application (25.4ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 88ms (Views: 82.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/blogs" for 126.91.74.95 at 2021-05-19 11:58:56 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:9
+  Rendered blogs/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:58:57 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/Travel_Memories/app/views/blogs/show.html.erb:10: syntax error, unexpected ')'
+...output_buffer.append=( @blog. );@output_buffer.safe_append='...
+...                              ^
+/home/ec2-user/environment/Travel_Memories/app/views/blogs/show.html.erb:52: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/ec2-user/environment/Travel_Memories/app/views/blogs/show.html.erb:54: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/blogs/show.html.erb:10: syntax error, unexpected ')'
+app/views/blogs/show.html.erb:52: syntax error, unexpected ensure, expecting ')'
+app/views/blogs/show.html.erb:54: syntax error, unexpected end, expecting ')'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 11:59:25 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (8.4ms)
+  Rendered blogs/show.html.erb within layouts/application (22.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `country_name' for #<Blog:0x00007fe360325bb8>
+Did you mean?  country_id_change):
+     7:         <li><h2><%= @blog.title %></h2></li>
+     8:         <li><h4><%= @blog.description %></h4></li>
+     9:         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+    10:         <li><h4><%= @blog.country_name %></h4></li>
+    11:       </ul>
+    12:       <% if @blog.user == current_user %>
+    13:       <%= link_to "更新", edit_blog_path(@blog) %>
+  
+app/views/blogs/show.html.erb:10:in `_app_views_blogs_show_html_erb___4290269365665180376_70307274105780'
+Started GET "/blogs/1" for 126.91.74.95 at 2021-05-19 12:00:01 +0000
+Cannot render console from 126.91.74.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlog Load (4.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:18
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/blogs/show.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (24.0ms)
+  [1m[36mFavorite Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."blog_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["blog_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/blog.rb:12
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:29
+  [1m[36mBlogComment Load (0.1ms)[0m  [1m[34mSELECT "blog_comments".* FROM "blog_comments" WHERE "blog_comments"."blog_id" = ?[0m  [["blog_id", 1]]
+  ↳ app/views/blogs/show.html.erb:30
+  Rendered blogs/show.html.erb within layouts/application (73.6ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 155ms (Views: 136.5ms | ActiveRecord: 5.3ms)
+
+

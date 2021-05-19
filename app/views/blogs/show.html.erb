@@ -7,8 +7,10 @@
         <li><h2><%= @blog.title %></h2></li>
         <li><h4><%= @blog.description %></h4></li>
         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+        <li><h4><%= @blog.country_name %></h4></li>
       </ul>
       <% if @blog.user == current_user %>
+      <%= link_to "更新", edit_blog_path(@blog) %>
       <%= link_to "削除", blog_path(@blog), method: :delete %>
       <% end %>
         <% if @blog.favorited_by?(current_user) %>
