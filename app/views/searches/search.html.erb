@@ -1,0 +1,19 @@
+<div class="container blog border-left border-right border-dark">
+  <div class="row">
+    <div class="col my-5">
+      <h2>Results index</h2>
+        <% if @range == "User" %>
+          <%= render 'users/list', users: @user %>
+        <% else %>
+          <% @blog.each do |blog| %>
+          <ul class="list-unstyled">
+            <li><%= attachment_image_tag blog, :image, width: '90%', height: '90%' %></li>
+            <li><h2><%= blog.title %></h2></li>
+            <li><h4><%= blog.description %></h4></li>
+            <li><h4><%= blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+          </ul>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

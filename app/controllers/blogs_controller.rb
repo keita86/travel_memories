@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  
   def new
     @blog = Blog.new
   end
@@ -7,7 +8,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     @blog.save
-    redirect_to blogs_path
+    redirect_to blog_path(@blog)
   end
 
   def index
@@ -57,7 +58,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :image, :description)
+    params.require(:blog).permit(:title, :image, :description, :country_name)
   end
 
 end

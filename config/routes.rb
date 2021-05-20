@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
+  
+  get "search" => "searches#search"
+  
   root to: 'homes#top'
   get 'daily_rank' => 'blogs#daily_rank'
   get 'weekly_rank' => 'blogs#weekly_rank'
