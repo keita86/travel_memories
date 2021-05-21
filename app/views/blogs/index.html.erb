@@ -1,4 +1,10 @@
+<div class="haikei">
 <div class="container blog border-left border-right border-dark">
+    <div class="row">
+    <div class="col">
+      <%= render 'layouts/search' %>
+    </div>
+  </div>
   <div class="row">
     <div class="col my-5">
       <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus btn btn-outline-success btn-lg" %>
@@ -16,4 +22,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>

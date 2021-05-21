@@ -1,3 +1,4 @@
+<div class="haikei">
 <div class="container blog memo border-left border-right border-dark">
   <div class="row">
     <div class="col">
@@ -39,10 +40,10 @@
         </li>
         <li class="fas fa-crown non-margin">ランク：<b><%= i+1 %>位</b></li>
         <li>月間いいね：<b><%= blog.favorites.where(created_at: Time.now.all_month).count %></b></li>
-    
+
       </ul>
     </div>
     <% end %>
   </div>
-
+</div>
 </div>

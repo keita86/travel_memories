@@ -19,12 +19,16 @@
   box-sizing: border-box;
 }
 
+
 .navmenu {
   font-size: 22px;
 }
 
 .haikei {
-  background-color: #ccc;
+  background-image: url(unsplash.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .blog {
@@ -35,7 +39,87 @@
   width: 700px;
 }
 
+.takasa {
+  height: 630px;
+}
+
 .list_memo {
   width: 900px;
 }
 
+.box {
+  position   : relative;
+  width  : 100%;
+  height     : 700px;
+}
+
+.box .bgimg {
+  position   : absolute;
+  width  : 100%;
+  height     : 700px;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  background-size: cover;
+  animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s */
+}
+
+.box .tn-1 {
+  background-image : url('tianshu.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 0s;
+  background-position: center;
+  background-size: cover;
+}
+.box .tn-2 {
+  background-image : url('busan-night.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 5s;
+  background-position: center;
+  background-size: cover;
+}
+.box .tn-3 {
+  background-image : url('street-america.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 10s;
+  background-position: center;
+  background-size: cover;
+}
+.box .tn-4 {
+  background-image : url('keswan.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 15s;
+  background-position: center;
+  background-size: cover;
+}
+
+.box .an-1 {
+  background-image : url('hongkong.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 0s;
+  background-position: center;
+  background-size: cover;
+}
+.box .an-2 {
+  background-image : url('landscape.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 5s;
+  background-position: center;
+  background-size: cover;
+}
+.box .an-3 {
+  background-image : url('sydney.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 10s;
+  background-position: center;
+  background-size: cover;
+}
+.box .an-4 {
+  background-image : url('harry.jpg');   /* 背景の画像を指定 */
+  animation-delay  : 15s;
+  background-position: center;
+  background-size: cover;
+}
+
+@keyframes bgAnime {
+   0% { opacity: 0; }
+   5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+ 100% { opacity: 0; }
+}

@@ -16,7 +16,6 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
 
   validates :name, presence: true
-  validates :introduction, presence: true
 
   def follow(user_id)
     relationships.create(followed_id: user_id)

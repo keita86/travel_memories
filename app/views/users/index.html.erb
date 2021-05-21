@@ -1,6 +1,9 @@
+<div class="haikei">
 <div class="container blog list_memo py-5  border-left border-right border-dark">
   <div class="row">
-    <%= render 'layouts/search' %>
+    <div class="col">
+      <%= render 'layouts/search' %>
+    </div>
   </div>
   <div class="row">
     <div class="col offset-1 mb-2">
@@ -8,4 +11,8 @@
     </div>
   </div>
   <%= render 'users/list', users: @users %>
+  <div class="mb-4 d-flex justify-content-center">
+    <%= paginate(@users) %>
+  </div>
+</div>
 </div>
