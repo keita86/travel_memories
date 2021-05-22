@@ -8,6 +8,9 @@ class Blog < ApplicationRecord
   validates :description, presence: true
   validates :image, presence: true
 
+  geocoded_by :address
+  after_validation :geocode
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end

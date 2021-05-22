@@ -1,11 +1,14 @@
-<div class="commentindex">
+<div class="col mt-1 offset-2 d-flex align-items-start flex-column">
   <p>コメント件数：<%= blog.blog_comments.count %></p>
   <% blog.blog_comments.each do |blog_comment| %>
-    <%= attachment_image_tag(blog_comment.user, :profile_image, fallback: "no_image.jpg", :size => '30x30', class: "rounded-circle") %>
+  <div>
+    <%= attachment_image_tag(blog_comment.user, :profile_image, fallback: "no_image.jpg", :size => '25x25', class: "rounded-circle") %>
     <%= blog_comment.user.name %>
-    <%= blog_comment.created_at.strftime('%Y/%m/%d') %><%= blog_comment.comment %>
+    [<%= blog_comment.created_at.strftime('%Y/%m/%d') %>]
+    『<%= blog_comment.comment %>』
     <% if blog_comment.user == current_user %>
       <%= link_to "削除", blog_blog_comment_path(blog_comment.blog, blog_comment), method: :delete, remote: true %>
     <% end %>
+  </div>
   <% end %>
-</div>  
+</div>

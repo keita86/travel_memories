@@ -3,7 +3,7 @@
   <%= render 'users/info', user: @user %>
   <div class="row py-5 border-bottom border-dark">
     <div class="col offset-1">
-      <% @user.blogs.each do |blog| %>
+      <% @userblogs.each do |blog| %>
       <ul class="list-unstyled">
         <li><%= attachment_image_tag blog, :image, width: '90%', height: '90%' %></li>
         <li><h2><%= blog.title %></h2></li>
@@ -14,6 +14,9 @@
       <%= link_to "削除", blog_path(blog), method: :delete %>
       <% end %>
       <% end %>
+      <div class="mb-4 d-flex justify-content-center">
+    <%= paginate(@userblogs) %>
+      </div>
     </div>
   </div>
 </div>

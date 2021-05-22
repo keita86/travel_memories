@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @userblogs = Blog.page(params[:page]).per(8)
   end
 
   def edit
@@ -16,18 +17,18 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(@user)
   end
-  
+
   def confirm
     @user = current_user
   end
-  
+
   def destroy
     user = current_user
     user.destroy
     # reset_session
     flash[:notice] = "退会処理を実行いたしました"
     redirect_to root_path
-  end 
+  end
 
 
   private

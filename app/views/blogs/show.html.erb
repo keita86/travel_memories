@@ -3,11 +3,13 @@
   <%= render 'users/info', user: @blog.user %>
   <div class="row py-5 border-bottom border-dark">
     <div class="col offset-1">
+      <h2>Memory</h2>
       <ul class="list-unstyled">
         <li><%= attachment_image_tag @blog, :image, width: '90%', height: '90%' %></li>
         <li><h2><%= @blog.title %></h2></li>
         <li><h4><%= @blog.description %></h4></li>
         <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+        <li><h4><%= @blog.address %></h4></li>
         <li><h4><%= @blog.country_name %></h4></li>
       </ul>
       <% if @blog.user == current_user %>
@@ -15,12 +17,24 @@
       <%= link_to "削除", blog_path(@blog), method: :delete %>
       <% end %>
       <%= render 'favorites/favorite', blog: @blog %>
+      <h2>gmap</h2>
+      <div id='map'></div>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd76lZL_ZdyeSNJ8aY6wLtbTyMlxauAZM&callback=initMap" async defer></script>
     </div>
   </div>
-  <div id="blog_comments_area">
-    <div class="row offset-1 d-flex align-items-start flex-column">
-        <%= render partial: 'blog_comments/index', locals: { blog: @blog } %>
+  <div class="row offset-1">
+    <h3>Comment</h3>
+  </div>
+  <div class="row">
+    <div id="blog_comments_area">
+      <%= render partial: 'blog_comments/index', locals: { blog: @blog } %>
+    </div>
+  </div>
+    <div class="row mt-3">
+      <div class="col offset-1">
         <%= render partial: 'blog_comments/form', locals: { blog: @blog, blog_comment: @blog_comment } %>
+      </div>
     </div>
   </div>
 </div>

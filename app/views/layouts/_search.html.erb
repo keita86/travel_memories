@@ -4,7 +4,11 @@
       <%= f.text_field :word %>
       <%= f.select :range, options_for_select([['User'], ['Blog']]) %>
       <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backword_match"], ["部分一致","partial_match"]]) %>
-      <%= f.submit "検索", class: "btn btn-primary" %>
+      <%= f.submit "検索", class: "btn btn-primary btn-sm" %>
+    <% end %>
+    <%= form_with url: search_country_path, local: true, method: :get do |f| %>
+      <%= f.country_select :country_name, priority_countries: ["JP", "US"] %>
+      <%= f.submit "検索", class: "btn btn-primary btn-sm" %>
     <% end %>
   </div>
 <% end %>

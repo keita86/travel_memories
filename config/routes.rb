@@ -14,8 +14,9 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
-
+  get '/map_request', to: 'maps#map', as: 'map_request'
   get "search" => "searches#search"
+  get "search_country" => "searches#search_country"
 
   resources :blogs do
     resource :favorites, only: [:create, :destroy]

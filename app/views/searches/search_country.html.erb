@@ -1,0 +1,21 @@
+<div class="haikei">
+<div class="container blog border-left border-right border-dark">
+    <div class="row">
+    <div class="col">
+      <h2>Results index</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <% @country.each do |blog| %>
+      <div>
+        <%= link_to blog_path(blog) do %>
+        <%= attachment_image_tag blog, :image, width: '25%', height: '25%'  %>
+        <% end %>
+        <p>Title：<%= blog.title %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
