@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :blog_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower

@@ -1,15 +1,18 @@
 class BlogCommentsController < ApplicationController
   def create
-    blog = Blog.find(params[:blog_id])
-    comment = current_user.blog_comments.new(blog_comment_params)
-    comment.blog = blog
-    comment.save
-    redirect_to blog_path(blog)
+    @blog = Blog.find(params[:blog_id])
+    @blog_comment = current_user.blog_comments.new(blog_comment_params)
+    @blog_comment.blog_id = @blog.id
+    @blog_comment.save
+    render :index
+    # redirect_to blog_path(blog)
   end
 
   def destroy
+    @blog = Blog.find(params[:blog_id])
     BlogComment.find_by(id: params[:id], blog_id: params[:blog_id]).destroy
-    redirect_to blog_path(params[:blog_id])
+    render :index
+    # redirect_to blog_path(params[:blog_id])
   end
 
   private
