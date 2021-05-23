@@ -1,5 +1,5 @@
-<div class="haikei">
-<div class="container blog list_memo py-5  border-left border-right border-dark">
+<div class="haikei2">
+<div class="container blog list_haba py-5  border-left border-right border-dark">
   <div class="row">
     <div class="col">
       <%= render 'layouts/search' %>
@@ -11,8 +11,5 @@
     </div>
   </div>
   <%= render 'users/list', users: @users %>
-  <div class="mb-4 d-flex justify-content-center">
-    <%= paginate(@users) %>
-  </div>
 </div>
 </div>

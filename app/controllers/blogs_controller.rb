@@ -7,8 +7,11 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
-    @blog.save
-    redirect_to blog_path(@blog)
+    if @blog.save
+      redirect_to blog_path(@blog)
+    else
+      render "new"
+    end
   end
 
   def index
@@ -28,9 +31,11 @@ class BlogsController < ApplicationController
 
   def update
     @blog = Blog.find(params[:id])
-    @blog.update(blog_params)
-    redirect_to blog_path(@blog)
-
+    if @blog.update(blog_params)
+      redirect_to blog_path(@blog)
+    else
+      render "edit"
+    end
   end
 
   def destroy

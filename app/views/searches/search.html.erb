@@ -1,21 +1,58 @@
-<div class="haikei">
-<div class="container memo blog border-left border-right border-dark">
-  <div class="row">
-    <div class="col my-5">
-      <h2>Results index</h2>
-        <% if @range == "User" %>
-          <%= render 'users/list', users: @user %>
-        <% else %>
-          <% @blog.each do |blog| %>
-          <ul class="list-unstyled">
-            <li><%= attachment_image_tag blog, :image, width: '90%', height: '90%' %></li>
-            <li><h2><%= blog.title %></h2></li>
-            <li><h4><%= blog.description %></h4></li>
-            <li><h4><%= blog.created_at.strftime('%Y/%m/%d') %></h4></li>
-          </ul>
-          <% end %>
-        <% end %>
+<div class="haikei2">
+<% if @range == "User" %>
+  <% if @user.exists? %>
+  <div class="container haba blog border-left border-right border-dark">
+    <div class="row">
+      <div class="col my-5">
+        <h2>Results index</h2>
+        <%= render 'users/list', users: @user %>
+      </div>
     </div>
   </div>
-</div>
+  <% else %>
+  <div class="container haba takasa blog border-left border-right border-dark">
+    <div class="row">
+      <div class="col">
+        <h2>Results index</h2>
+      </div>
+    </div>
+    <div class="row">
+      <h3>記録はありません</h3>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <% if @country.exists? %>
+  <div class="container haba blog border-left border-right border-dark">
+    <div class="row">
+      <div class="col">
+        <h2>Results index</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <% @blog.each do |blog| %>
+        <ul class="list-unstyled">
+          <li><%= attachment_image_tag blog, :image, width: '90%', height: '90%' %></li>
+          <li><h2><%= blog.title %></h2></li>
+          <li><h4><%= blog.description %></h4></li>
+          <li><h4><%= blog.created_at.strftime('%Y/%m/%d') %></h4></li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <div class="container haba takasa blog border-left border-right border-dark">
+    <div class="row">
+      <div class="col">
+        <h2>Results index</h2>
+      </div>
+    </div>
+    <div class="row">
+      <h3>記録はありません</h3>
+    </div>
+  </div>
+  <% end %>
+<% end %>
 </div>

@@ -31,11 +31,18 @@
   background-size: cover;
 }
 
+.haikei2{
+  background-image: url(918521.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .blog {
   background-color: #eee;
 }
 
-.memo {
+.haba {
   width: 700px;
 }
 
@@ -43,8 +50,24 @@
   height: 630px;
 }
 
-.list_memo {
+.list_haba {
   width: 900px;
+}
+
+.blog-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-item{
+  margin: 12px;
+}
+
+.Photo{
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  padding-bottom: 5px;
 }
 
 .box {
@@ -128,3 +151,16 @@
   width: 90%;
   height: 400px;
 }
+
+.box .abouttext{
+  position: absolute;
+  color: white;/*文字は白に*/
+  display: inline-block;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 3px 3px 3px #000;
+  text-align: center;
+}
+

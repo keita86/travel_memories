@@ -13,7 +13,6 @@ class SearchesController < ApplicationController
 
   def search_country
     country_code = params[:country_name]
-    @country = Blog.where("country_name = ?", country_code)
-    @country = Blog.page(params[:page]).per(16)
+    @country = Blog.where("country_name = ?", country_code).page(params[:page]).per(10)
   end
 end

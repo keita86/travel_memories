@@ -7,6 +7,8 @@ class Blog < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :image, presence: true
+  validates :address, presence: true
+
 
   geocoded_by :address
   after_validation :geocode

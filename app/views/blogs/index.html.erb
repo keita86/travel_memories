@@ -1,6 +1,6 @@
-<div class="haikei">
-<div class="container blog border-left border-right border-dark">
-    <div class="row">
+<div class="haikei2">
+<div class="container blog py-5 border-left border-right border-dark">
+  <div class="row">
     <div class="col">
       <%= render 'layouts/search' %>
     </div>
@@ -12,14 +12,15 @@
   </div>
   <div class="row">
     <div class="col">
+      <div class="blog-box">
       <% @blogs.each do |blog| %>
-      <div>
+        <div class="box-item d-flex flex-column">
         <%= link_to blog_path(blog) do %>
-        <%= attachment_image_tag blog, :image, width: '25%', height: '25%'  %>
+        <%= attachment_image_tag blog, :image, class: "Photo" %>
         <% end %>
-        <p>Title：<%= blog.title %></p>
-      </div>
+        </div>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
