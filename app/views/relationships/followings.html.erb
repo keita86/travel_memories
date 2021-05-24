@@ -1,14 +1,24 @@
-<div class="haikei">
-<div class="container blog list_memo py-5  border-left border-right border-dark">
-  <div class="row">
-    <div class="col offset-1 mb-2">
-      <h1>Follow users</h1>
+<div class="haikei2">
+  <div class="container py-5">
+    <div class="user-box my-5 bg-white">
+      <div class="container">
+        <div class="row mt-3 offset-1">
+          <h2 class="midasi">Follow users</h2>
+        </div>
+        <div class="row mt-3">
+          <div class="user-box-item my-5">
+            <h3 class="mb-5">Follow Index</h3>
+              <% if @users.exists? %>
+                <%= render 'users/list', users: @users %>
+              <% else %>
+                <p>ユーザーはいません</p>
+              <% end %>
+            <div class="mb-4 d-flex justify-content-center">
+              <%= paginate(@users) %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <% if @users.exists? %>
-    <%= render 'users/list', users: @users %>
-  <% else %>
-    <p>ユーザーはいません</p>
-  <% end %>
-</div>
 </div>

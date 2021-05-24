@@ -1,23 +1,36 @@
-<div class ="haikei2">
-  <div class = "container my-5">
-    <div class='row-sm-6'>
-      <div class="col d-flex justify-content-center">
+<div class ="haikei3">
+  <div class ="container">
+    <div class='row py-5'>
+      <div class="blog-box-comfilm bg-white">
+        <div class="container">
+          <div class="row pt-4 d-flex justify-content-center">
+            <h1 class="text-comfilm">Really want to unsubscribe?</h1>
+          </div>
 
-        <h3 class="text-danger">本当に退会しますか？</h3>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col d-flex justify-content-center">
-        退会すると、会員登録情報や
-        これまでの購⼊履歴が閲覧できなくなります。
-        退会する場合は、「退会する」をクリックしてください。
-      </div>
-    </div>
-   <div class="row my-5">
-     <div class="col d-flex justify-content-center">
-        <div class = 'other-information'>
-          <%= link_to '退会しない', user_path(current_user), class: "mr-2 btn btn-primary" %>
-          <%= link_to '退会する', user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？", class: "ml-2 btn btn-danger" %>
+          <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+              <h4 class="comfilm-text">
+                本当に退会しますか？<br>
+                退会すると今までの記憶が消えてしまいます<br>
+                よろしいですか？
+              </h4>
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col d-flex justify-content-center">
+              <div class = 'other-information'>
+                <%= link_to 'Back', user_path(current_user), class: "mr-2 button-p" %>
+              </div>
+            </div>
+          </div>
+          <div class="row pb-5">
+            <div class="comfilm-box">
+              <div class="py-3">
+              <h4 class="text-comfilm">Reary Unsubscribe?</h4>
+                <%= link_to 'Unsubscribe', user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？", class: "ml-2 button-d" %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

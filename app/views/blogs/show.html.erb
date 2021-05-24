@@ -14,7 +14,7 @@
             <li><%= attachment_image_tag @blog, :image, class: "blog-box-img" %></li>
             <li><h2>Title『<%= @blog.title %>』</h2></li>
             <li><h4>Description「<%= @blog.description %>」</h4></li>
-            <li><h4>[<%= @blog.created_at.strftime('%Y/%m/%d') %>]</h4></li>
+            <li><h4>Day [<%= @blog.created_at.strftime('%Y/%m/%d') %>]</h4></li>
             <li><h4>Address「<%= @blog.address %>」</h4></li>
             <li><h4>Country「<%= @blog.country_name %>」</h4></li>
             <li class="mb-">

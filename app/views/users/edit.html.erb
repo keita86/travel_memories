@@ -1,19 +1,27 @@
 <div class="haikei2">
-<div class="container haba takasa blog border-left border-right border-dark">
-  <div class="row">
-    <div class="col">
-      <h4>Edit User</h4>
-      <%= form_with model: @user, local:true do |f| %>
-        <h4>プロフィール画像</h4>
-        <%= f.attachment_field :profile_image %>
-        <h4>名前</h4>
-        <%= f.text_field :name %>
-        <h4>紹介文</h4>
-        <%= f.text_area :introduction %>
-        <%= f.submit 'User Update' %>
-        <%= link_to '退会する', user_confirm_path(current_user),class: 'btn btn-danger' %>
-      <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="form-user py-3 bg-white">
+        <div class="container">
+          <div class="row my-3 offset-1">
+            <h4 class="midasi">Edit User</h4>
+          </div>
+      　   <%= form_with model: @user, local: true do |f| %>
+            <h4 class="my-3">Plofile Image</h4>
+            <%= f.attachment_field :profile_image %>
+            <h4 class="my-3">Name</h4>
+            <%= f.text_field :name, placeholder: "名前" %>
+            <h4 class="my-3">Introduction</h4>
+            <%= f.text_area :introduction, placeholder: "説明" %>
+            <div class="my-4">
+            <%= f.submit 'User Update', class: "button-s" %>
+            </div>
+            <div class="my-3">
+              <%= link_to '退会する', user_confirm_path(current_user),class: "button-d" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </div>

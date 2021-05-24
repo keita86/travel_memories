@@ -17,10 +17,10 @@
             <%= attachment_image_tag blog, :image, class: "blog-box-img" %>
             <% end %>
           </li>
-          <li><h2>Title『<%= blog.title %>』</h2></li>
-          <li><h4>Description「<%= blog.description %>」</h4></li>
-          <li><h4>Days[<%= blog.created_at.strftime('%Y/%m/%d') %>]</h4></li>
-          <li>
+          <li class="my-2"><h2>Title『<%= blog.title %>』</h2></li>
+          <li class="my-2"><h4>Description「<%= blog.description %>」</h4></li>
+          <li class="my-2"><h4>Day [<%= blog.created_at.strftime('%Y/%m/%d') %>]</h4></li>
+          <li class="my-2">
             <% if @user == current_user %>
             <%= link_to "Delete", blog_path(blog), method: :delete, class: "button-d" %>
             <% end %>
