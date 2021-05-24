@@ -7,7 +7,7 @@
     [<%= blog_comment.created_at.strftime('%Y/%m/%d') %>]
     『<%= blog_comment.comment %>』
     <% if blog_comment.user == current_user %>
-      <%= link_to "delete", blog_blog_comment_path(blog_comment.blog, blog_comment), method: :delete, remote: true, class: "botton-d" %>
+      <%= link_to "delete", blog_blog_comment_path(blog_comment.blog, blog_comment), method: :delete, remote: true, class: "button-d" %>
     <% end %>
   </div>
   <% end %>

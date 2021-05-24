@@ -1,6 +1,6 @@
       <div class="new-comment">
         <%= form_with(model:[blog, blog_comment]) do |f| %>
         <%= f.text_area :comment, rows:'3',placeholder: "コメント" %>
-        <%= f.submit "送信する" %>
+        <div class="my-2"><%= f.submit "送信する", class: "button-p" %></div>
       <% end %>
       </div>

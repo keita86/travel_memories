@@ -19,8 +19,8 @@
             <li><h4>Country「<%= @blog.country_name %>」</h4></li>
             <li class="mb-">
               <% if @blog.user == current_user %>
-                <%= link_to "更新", edit_blog_path(@blog), class: "botton-s" %>
-                <%= link_to "削除", blog_path(@blog), method: :delete, class: "botton-d" %>
+                <%= link_to "更新", edit_blog_path(@blog), class: "button-s" %>
+                <%= link_to "削除", blog_path(@blog), method: :delete, class: "button-d" %>
               <% end %>
             </li>
             <li class="mt-2">

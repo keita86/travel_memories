@@ -22,7 +22,7 @@
           <li><h4>Days[<%= blog.created_at.strftime('%Y/%m/%d') %>]</h4></li>
           <li>
             <% if @user == current_user %>
-            <%= link_to "Delete", blog_path(blog), method: :delete, class: "botton-d" %>
+            <%= link_to "Delete", blog_path(blog), method: :delete, class: "button-d" %>
             <% end %>
           </li>
         </ul>
