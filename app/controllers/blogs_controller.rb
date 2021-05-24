@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.all.order(created_at: :desc)
+    @blogs = Blog.page(params[:page]).per(10).order(created_at: :desc)
   end
 
   def show

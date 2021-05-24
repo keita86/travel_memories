@@ -1,28 +1,5 @@
 <div class="haikei2">
-<% if @range == "User" %>
-  <% if @user.exists? %>
-  <div class="container haba blog border-left border-right border-dark">
-    <div class="row">
-      <div class="col my-5">
-        <h2>Results index</h2>
-        <%= render 'users/list', users: @user %>
-      </div>
-    </div>
-  </div>
-  <% else %>
-  <div class="container haba takasa blog border-left border-right border-dark">
-    <div class="row">
-      <div class="col">
-        <h2>Results index</h2>
-      </div>
-    </div>
-    <div class="row">
-      <h3>記録はありません</h3>
-    </div>
-  </div>
-  <% end %>
-<% else %>
-  <% if @country.exists? %>
+  <% if @blog.exists? %>
   <div class="container haba blog border-left border-right border-dark">
     <div class="row">
       <div class="col">
@@ -54,5 +31,4 @@
     </div>
   </div>
   <% end %>
-<% end %>
 </div>

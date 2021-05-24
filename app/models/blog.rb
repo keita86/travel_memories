@@ -28,16 +28,16 @@ class Blog < ApplicationRecord
   end
 
   def self.looks(search, word)
-    if search == "perfect_match"
-      @blog = Blog.where("title LIKE?","#{word}")
-    elsif search == "forward_match"
-      @blog = Blog.where("title LIKE?","#{word}%")
-    elsif search == "backward_match"
-      @blog = Blog.where("title LIKE?","%#{word}")
-    elsif search == "partial_match"
+    # if search == "perfect_match"
+      # @blog = Blog.where("title LIKE?","#{word}")
+    # elsif search == "forward_match"
+      # @blog = Blog.where("title LIKE?","#{word}%")
+    # elsif search == "backward_match"
+      # @blog = Blog.where("title LIKE?","%#{word}")
+    # elsif search == "partial_match"
       @blog = Blog.where("title LIKE?","%#{word}%")
-    else
-      @blog = Blog.all
-    end
+    # else
+      # @blog = Blog.all
+    # end
   end
 end

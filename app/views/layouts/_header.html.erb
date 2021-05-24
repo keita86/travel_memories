@@ -1,12 +1,12 @@
 <div class="container nav-head">
-  <div class="row d-flex align-items-center">
-    <div class="col">
+  <div class="row d-flex justify-content-between">
+    <div class="nav-logo">
       <a class="navbar-brand p-3" href="/"><%= image_tag('Logotra.jpg', :size => '180x70') %></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-    <div class="nav col d-flex justify-content-end">
+    <div class="nav">
     <% if user_signed_in? %>
       <li class="navmenu mr-2">
         <%= link_to "記憶", blogs_path, class: "fas fa-plane btn btn-outline-secondary" %>
@@ -21,7 +21,7 @@
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-plane-departure btn btn-outline-secondary" %>
       </li>
       <li class="navmenu mr-2">
-        <%= link_to "ランキング", monthly_rank_path, class: "fas fa-user-crown btn btn-outline-secondary" %>
+        <%= link_to "ランキング", monthly_rank_path, class: "fas fa-crown btn btn-outline-secondary" %>
       </li>
     <% else %>
       <li class="navmenu mr-2">

@@ -1,23 +1,34 @@
 <div class="haikei2">
-<div class="container haba blog  blog border-left border-right border-dark">
-  <%= render 'users/info', user: @user %>
-  <div class="row py-5 border-bottom border-dark">
-    <div class="col offset-1">
-      <% @userblogs.each do |blog| %>
-      <ul class="list-unstyled">
-        <li><%= attachment_image_tag blog, :image, width: '90%', height: '90%' %></li>
-        <li><h2><%= blog.title %></h2></li>
-        <li><h4><%= blog.description %></h4></li>
-        <li><h4><%= blog.created_at.strftime('%Y/%m/%d') %></h4></li>
-      </ul>
-      <% if @user == current_user %>
-      <%= link_to "削除", blog_path(blog), method: :delete %>
-      <% end %>
-      <% end %>
-      <div class="mb-4 d-flex justify-content-center">
-        <%= paginate(@userblogs) %>
+<div class="container py-5">
+  <div class="blog-box py-2 bg-white">
+    <%= render 'users/info', user: @user %>
+  </div>
+  <div class="blog-box my-5 bg-light">
+    <div class="row my-4 offset-1">
+      <h2 class="midasi">Memory</h2>
+    </div>
+    <% @user.blogs.each do |blog| %>
+    <div class="row mx-auto pb-5">
+      <div class="col">
+        <ul class="list-unstyled blog-box-item">
+          <li><h2>blog</h2></li>
+          <li class="mt-2">
+            <%= link_to blog_path(blog) do %>
+            <%= attachment_image_tag blog, :image, class: "blog-box-img" %>
+            <% end %>
+          </li>
+          <li><h2>Title『<%= blog.title %>』</h2></li>
+          <li><h4>Description「<%= blog.description %>」</h4></li>
+          <li><h4>Days[<%= blog.created_at.strftime('%Y/%m/%d') %>]</h4></li>
+          <li>
+            <% if @user == current_user %>
+            <%= link_to "Delete", blog_path(blog), method: :delete, class: "botton-d" %>
+            <% end %>
+          </li>
+        </ul>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 </div>

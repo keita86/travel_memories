@@ -1,41 +1,62 @@
 <div class="haikei2">
-<div class="container haba blog  border-left border-right border-dark">
-  <%= render 'users/info', user: @blog.user %>
-  <div class="row py-5 border-bottom border-dark">
-    <div class="col offset-1">
-      <h2>Memory</h2>
-      <ul class="list-unstyled">
-        <li><%= attachment_image_tag @blog, :image, width: '90%', height: '90%' %></li>
-        <li><h2><%= @blog.title %></h2></li>
-        <li><h4><%= @blog.description %></h4></li>
-        <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
-        <li><h4><%= @blog.address %></h4></li>
-        <li><h4><%= @blog.country_name %></h4></li>
-      </ul>
-      <% if @blog.user == current_user %>
-      <%= link_to "更新", edit_blog_path(@blog) %>
-      <%= link_to "削除", blog_path(@blog), method: :delete %>
-      <% end %>
-      <%= render 'favorites/favorite', blog: @blog %>
-      <h2>gmap</h2>
-      <div id='map'></div>
-
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd76lZL_ZdyeSNJ8aY6wLtbTyMlxauAZM&callback=initMap" async defer></script>
+  <div class="container py-5">
+    <div class="blog-box py-2 bg-white">
+      <%= render 'users/info', user: @blog.user %>
     </div>
-  </div>
-  <div class="row offset-1">
-    <h3>Comment</h3>
-  </div>
-  <div class="row">
-    <div id="blog_comments_area">
-      <%= render partial: 'blog_comments/index', locals: { blog: @blog } %>
-    </div>
-  </div>
-    <div class="row mt-3">
-      <div class="col offset-1">
-        <%= render partial: 'blog_comments/form', locals: { blog: @blog, blog_comment: @blog_comment } %>
+    <div class="blog-box my-5 bg-light">
+      <div class="row my-4 offset-1">
+        <h2 class="midasi">Memory</h2>
+      </div>
+      <div class="row mx-auto">
+        <div class="col">
+          <ul class="list-unstyled blog-box-item">
+            <li><h2>blog</h2></li>
+            <li><%= attachment_image_tag @blog, :image, class: "blog-box-img" %></li>
+            <li><h2>Title『<%= @blog.title %>』</h2></li>
+            <li><h4>Description「<%= @blog.description %>」</h4></li>
+            <li><h4>[<%= @blog.created_at.strftime('%Y/%m/%d') %>]</h4></li>
+            <li><h4>Address「<%= @blog.address %>」</h4></li>
+            <li><h4>Country「<%= @blog.country_name %>」</h4></li>
+            <li class="mb-">
+              <% if @blog.user == current_user %>
+                <%= link_to "更新", edit_blog_path(@blog), class: "botton-s" %>
+                <%= link_to "削除", blog_path(@blog), method: :delete, class: "botton-d" %>
+              <% end %>
+            </li>
+            <li class="mt-2">
+              <h3><%= render 'favorites/favorite', blog: @blog %></h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mx-auto">
+        <div class="blog-box-item">
+          <div class="col">
+            <h2>gmap</h2>
+            <div id='map'></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd76lZL_ZdyeSNJ8aY6wLtbTyMlxauAZM&callback=initMap" async defer></script>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-auto">
+        <div class="container">
+          <div class="blog-box-item comment-box">
+            <div class="row offset-1">
+              <h3>Comment</h3>
+            </div>
+            <div class="row">
+              <div id="blog_comments_area">
+                <%= render partial: 'blog_comments/index', locals: { blog: @blog } %>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col offset-1">
+                <%= render partial: 'blog_comments/form', locals: { blog: @blog, blog_comment: @blog_comment } %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>

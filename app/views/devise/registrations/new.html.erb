@@ -1,42 +1,46 @@
 <div class="haikei">
-<div class="container haba takasa blog border-left border-right border-dark">
+<div class="container">
   <div class="row">
     <div class="col">
-      <h2>Sign up</h2>
-
-      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-
-        <div class="field">
-          <%= f.label :name %><br />
-          <%= f.text_field :name, autofocus: true, placeholder: "name" %>
+      <div class="form-sign py-3 bg-white">
+        <div class="my-3">
+          <%= image_tag('Logotitle2.png', :size => '250x50') %>
         </div>
+        <h5 class="my-3">新たな世界へ飛び出そう！</h5>
 
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@exmple.com" %>
-        </div>
+        <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
+          <div class="field my-4">
+            <%= f.text_field :name, autofocus: true, placeholder: "名前(ニックネーム)" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
+          <div class="field my-4">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "Sign up" %>
-        </div>
-      <% end %>
+          <div class="field my-4">
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(６桁以上)" %>
+          </div>
 
-      <%= render "devise/shared/links" %>
+          <div class="field my-4">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード(確認用)" %>
+          </div>
 
+          <div class="actions pb-3">
+            <%= f.submit "登録", class: "btn btn-primary w-75" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-sign py-3 bg-white">
+        <h5>登録している場合は</h5>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>

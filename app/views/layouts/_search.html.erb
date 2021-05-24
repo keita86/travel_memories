@@ -1,20 +1,18 @@
 <% if user_signed_in? %>
   <div class="search_form">
-    <div class="row">
-      <div class="col offset-1">
-        <%= form_with url: search_path, local: true, method: :get do |f| %>
-          <%= f.text_field :word %>
-          <%= f.select :range, options_for_select([['User'], ['Blog']]), class: "form-control" %>
-          <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backword_match"], ["部分一致","partial_match"]]), class: "form-control" %>
-          <%= f.submit "検索", class: "btn btn-primary btn-sm" %>
-        <% end %>
-      </div>
-      <div class="col">
-        <%= form_with url: search_country_path, local: true, method: :get do |f| %>
-          <%= f.country_select :country_name, priority_countries: ["JP", "US"], class: "form-control" %>
-          <%= f.submit "検索", class: "btn btn-primary btn-sm" %>
-        <% end %>
-      </div>
+    <div class="blog-form">
+      <h3>Blog Search</h3>
+      <%= form_with url: search_path, local: true, method: :get do |f| %>
+        <%= f.text_field :word, placeholder: "キーワード検索" %>
+        <%= f.submit "検索", class: "botton-p" %>
+      <% end %>
+    </div>
+    <div class="country-form">
+    <h3>Country Search</h3>
+      <%= form_with url: search_country_path, local: true, method: :get do |f| %>
+        <%= f.country_select :country_name, priority_countries: ["JP", "US"], class: "form-control" %>
+        <%= f.submit "検索", class: "botton-p" %>
+      <% end %>
     </div>
   </div>
 <% end %>
