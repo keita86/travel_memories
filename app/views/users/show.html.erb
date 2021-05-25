@@ -7,7 +7,7 @@
     <div class="row my-4 offset-1">
       <h2 class="midasi">Memory</h2>
     </div>
-    <% @user.blogs.each do |blog| %>
+    <% @blogs.each do |blog| %>
     <div class="row mx-auto pb-5">
       <div class="col">
         <ul class="list-unstyled blog-box-item">
@@ -29,6 +29,11 @@
       </div>
     </div>
     <% end %>
+    <div class="row mx-auto">
+      <div class="pagenation">
+        <%= paginate(@blogs) %>
+      </div>
+    </div>
   </div>
 </div>
 </div>
