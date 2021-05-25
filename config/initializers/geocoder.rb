@@ -1,4 +1,4 @@
 Geocoder.configure(
   lookup: :google,
-  api_key: "AIzaSyCd76lZL_ZdyeSNJ8aY6wLtbTyMlxauAZM"
+  api_key: ENV['GOOGLE_MAP_API']
 )

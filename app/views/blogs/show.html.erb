@@ -34,7 +34,7 @@
           <div class="col">
             <h2>gmap</h2>
             <div id='map'></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd76lZL_ZdyeSNJ8aY6wLtbTyMlxauAZM&callback=initMap" async defer></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAP_API"] %>&callback=initMap" async defer></script>
           </div>
         </div>
       </div>
