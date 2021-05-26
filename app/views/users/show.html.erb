@@ -9,25 +9,27 @@
     </div>
     <% @blogs.each do |blog| %>
     <div class="row mx-auto">
-      <ul class="list-unstyled blog-box-item">
-        <li><h2>blog</h2></li>
-        <li class="mt-2">
-          <%= link_to blog_path(blog) do %>
-          <%= attachment_image_tag blog, :image, class: "blog-box-img" %>
-          <% end %>
-        </li>
-        <li class="my-2"><h2>Title</h2></li>
-        <li class="my-2"><h2>『<%= blog.title %>』</h2></li>
-        <li class="my-2"><h2>Description</h2></li>
-        <li class="my-2"><h4>「<%= blog.description %>」</h4></li>
-        <li class="my-2"><h2>Day</h2></li>
-        <li class="my-2"><h4> 「<%= blog.created_at.strftime('%Y/%m/%d') %>」</h4></li>
-        <li class="my-2">
-          <% if @user == current_user %>
-          <%= link_to "Delete", blog_path(blog), method: :delete, class: "button-d" %>
-          <% end %>
-        </li>
-      </ul>
+      <div class="col">
+        <ul class="list-unstyled blog-box-item">
+          <li><h2>blog</h2></li>
+          <li class="mt-2">
+            <%= link_to blog_path(blog) do %>
+            <%= attachment_image_tag blog, :image, class: "blog-box-img" %>
+            <% end %>
+          </li>
+          <li class="my-2"><h2>Title</h2></li>
+          <li class="my-2"><h2>『<%= blog.title %>』</h2></li>
+          <li class="my-2"><h2>Description</h2></li>
+          <li class="my-2"><h4>「<%= blog.description %>」</h4></li>
+          <li class="my-2"><h2>Day</h2></li>
+          <li class="my-2"><h4> 「<%= blog.created_at.strftime('%Y/%m/%d') %>」</h4></li>
+          <li class="my-2">
+            <% if @user == current_user %>
+            <%= link_to "Delete", blog_path(blog), method: :delete, class: "button-d" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
     <% end %>
     <div class="row mx-auto">
