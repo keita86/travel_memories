@@ -72,6 +72,7 @@ gem 'country_select'
 gem 'rails-i18n'
 gem 'gon'
 gem 'geocoder'
+gem 'google-cloud-vision'
 
 gem 'dotenv-rails'
 group :production do

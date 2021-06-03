@@ -6,10 +6,14 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(blog_params)
-    @blog.user_id = current_user.id
-    if @blog.save
-      redirect_to blog_path(@blog)
+    blog = Blog.new(blog_params)
+    blog.user_id = current_user.id
+    if blog.save
+      tags = Vision.get_image_data(blog.image)
+      tags.each do |tag|
+        blog.tags.create(name: tag)
+      end
+      redirect_to blog_path(blog)
     else
       render "new"
     end
