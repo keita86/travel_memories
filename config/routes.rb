@@ -6,8 +6,14 @@ Rails.application.routes.draw do
   get 'weekly_rank' => 'blogs#weekly_rank'
   get 'monthly_rank' => 'blogs#monthly_rank'
 
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
-  devise_for :users
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+
   resources :users, only: [:index, :show, :edit, :update, :destroy] do
     get 'confirm'
     resource :relationships, only: [:create, :destroy]
