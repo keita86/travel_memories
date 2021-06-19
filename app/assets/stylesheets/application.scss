@@ -14,24 +14,3 @@
  *= require_self
  */
 
-.sidebar{
-  position: fixed;
-  z-index: 9999;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  width: 240px;
-  height: 500px;
-  background-color: rgba( 0, 0, 0, 0.5);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.container {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.main{
-}
