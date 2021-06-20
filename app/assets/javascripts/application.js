@@ -50,3 +50,31 @@ document.addEventListener("turbolinks:load", function () {
     });
   });
 });
+
+var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0;
+    if (windowwidth > 768){
+      var responsiveImage = [//PC用の画像
+        { src: 'https://cdn.pixabay.com/photo/2016/11/21/14/04/car-1845574_1280.jpg'},
+        { src: 'https://cdn.pixabay.com/photo/2017/05/12/13/17/night-flight-2307018_1280.jpg'},
+        { src: 'https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg'}
+      ];
+    } else {
+      var responsiveImage = [//タブレットサイズ（768px）以下用の画像
+        { src: 'https://images.unsplash.com/photo-1499363536502-87642509e31b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80' },
+        { src: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3034&q=80' },
+        { src: 'https://images.unsplash.com/photo-1478860002487-680cc42afbeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3034&q=80' }
+      ];
+    }
+
+//Vegas全体の設定
+document.addEventListener("turbolinks:load", function () {
+  $('#slider').vegas({
+    overlay: true,
+    transition: 'blur',
+    transitionDuration: 2000,
+    delay: 10000,
+    animationDuration: 20000,
+    animation: 'kenburns',
+    slides: responsiveImage,
+  });
+});
