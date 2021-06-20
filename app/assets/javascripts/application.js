@@ -78,3 +78,5 @@ document.addEventListener("turbolinks:load", function () {
     slides: responsiveImage,
   });
 });
+
+
