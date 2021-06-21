@@ -15,6 +15,13 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+    <header class="border border-dark">
+      <%= render 'layouts/header' %>
+    </header>
+    <% else %>
+    <% end %>
+
     <div class="main">
       <%= yield %>
     </div>
