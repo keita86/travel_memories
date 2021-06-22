@@ -1,47 +1,23 @@
-<header class="border border-dark">
-  <%= render 'layouts/header' %>
-</header>
-
-<div class="haikei2">
-  <div class="container py-5">
-    <div class="blog-box py-2 bg-light">
-      <div class="container">
-        <div class="row mt-3 offset-1">
           <h3 class="midasi">Search</h3>
-        </div>
-        <div class="row">
           <%= render 'layouts/search' %>
-        </div>
-      </div>
-    </div>
-    <div class="blog-box my-5 bg-light">
-      <div class="container">
-        <div class="row my-4 offset-1">
           <h2 class="midasi">Memories</h2>
-        </div>
-        <div class="row">
-          <div class="create-memory-box">
             <div class="my-4">
             <h3>Create Memory</h3>
             <h6>みんなと記録を共有しよう</h6>
             <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus button-s" %>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="memories-box">
-            <h3>Memories</h3>
-            <% @blogs.each do |blog| %>
-              <%= link_to blog_path(blog) do %>
-              <%= attachment_image_tag blog, :image, class: "Photo" %>
+<h3>Memories</h3>
+            <div class="box">
+            <ul class="gallery">
+              <% @blogs.each do |blog| %>
+              <li>
+                <%= link_to blog_path(blog) do %>
+                <%= attachment_image_tag blog, :image %>
+                <% end %>
+              </li>
               <% end %>
-            <% end %>
+            </ul>
+</div>
             <div class="mb-4 d-flex justify-content-center">
                <%= paginate(@blogs) %>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

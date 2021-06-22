@@ -31,10 +31,27 @@ section {
   position: absolute;
   bottom: 50%;
   left: 50%;
+  width: 800px;
+  height: 300px;
   transform: translateY(30%) translateX(-50%);
   color: #fff;
   text-shadow: 0 0 15px #666;
 }
+
+@media only screen and (max-width: 768px){
+  .title-logo {
+    width: 640px;
+    height: 240px;
+  }
+}
+
+@media only screen and (max-width: 425px){
+  .title-logo {
+    width: 240px;
+    height: 90px;
+  }
+}
+
 
 #box2{
   background-image: image-url("camera.jpg");
@@ -66,11 +83,11 @@ section {
 }
 
 .box {
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .box-title{
@@ -94,6 +111,52 @@ section {
     color: #333;
     font-family: 'Baskervville', serif;
     text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+  .about-1h{
+  font-size: 0.6rem;
+    margin: 20px 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+  .about-h{
+  font-size: 0.6rem;
+    margin: 0 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 425px){
+  .about-1h{
+  font-size: 0.3rem;
+    margin: 20px 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+  .about-h{
+  font-size: 0.3rem;
+    margin: 0 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: 425px){
+  .title-logo {
+    width: 240px;
+    height: 90px;
+  }
 }
 
 .abouttext h2 span {
@@ -128,6 +191,13 @@ footer{
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
+
+@media screen and (max-width: 425px) {
+  small{
+    font-size: 10%;
+    }
+}
+
 
 .nav-text {
   font-size: 1.3rem;
@@ -392,4 +462,27 @@ footer{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.form-logo {
+  width: 250px;
+  height: 50px;
+}
+@media screen and (max-width:375px) {
+  .form-logo{
+    width: 200px;
+    height: 40px;
+  }
+  .form-sign {
+    width: 240px;
+  }
+  .form-title{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .form-sign {
+    width: 200px;
+  }
 }

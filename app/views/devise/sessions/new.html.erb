@@ -9,13 +9,13 @@
   </div>
 </nav>
 
-<div class="haikei box-form">
-<div class="container">
+<div class="haikei">
+<div class="container box-form">
   <div class="row">
     <div class="col">
       <div class="form-sign py-3 bg-white">
         <div class="my-3">
-          <%= image_tag('Logotitle2.png', :size => '250x50') %>
+          <%= image_tag('Logotitle2.png', class: "form-logo") %>
         </div>
         <h5 class="my-3">今すぐ記憶を共有しよう！</h5>
       　<%= form_with model: @user, url: user_session_path, local: true do |f| %>
