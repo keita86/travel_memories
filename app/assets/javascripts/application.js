@@ -51,6 +51,7 @@ document.addEventListener("turbolinks:load", function () {
   });
 });
 
+
 var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0;
     if (windowwidth > 768){
       var responsiveImage = [//PC用の画像
@@ -78,5 +79,4 @@ document.addEventListener("turbolinks:load", function () {
     slides: responsiveImage,
   });
 });
-
 

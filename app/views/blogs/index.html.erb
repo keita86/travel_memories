@@ -6,18 +6,20 @@
             <h6>みんなと記録を共有しよう</h6>
             <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus button-s" %>
             </div>
-<h3>Memories</h3>
+            <h3>Memories</h3>
             <div class="box">
             <ul class="gallery">
               <% @blogs.each do |blog| %>
               <li>
-                <%= link_to blog_path(blog) do %>
-                <%= attachment_image_tag blog, :image %>
-                <% end %>
+                  <div class="box-item">
+                  <%= link_to blog_path(blog) do %>
+                  <%= attachment_image_tag blog, :image %>
+                  <% end %>
+                </div>
               </li>
               <% end %>
             </ul>
-</div>
+            </div>
             <div class="mb-4 d-flex justify-content-center">
                <%= paginate(@blogs) %>
             </div>
