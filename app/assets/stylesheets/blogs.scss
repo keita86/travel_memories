@@ -18,12 +18,13 @@
 	position: relative;
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 10px;
 }
 
 /*ギャラリー内のイメージは横幅100%にする*/
 .gallery img{
 	width: 100%;
+	border-radius: 20px;
 	height: auto;
 	vertical-align: bottom;/*画像の下にできる余白を削除*/}
 
@@ -44,9 +45,81 @@
 	.gallery{
 	columns: 1;
 	}
-	
+
 	.box-item{
 		padding: 0 0 30px 0;
 	}
 }
 
+.form1{
+	padding-right: 80px;
+}
+
+#slider2 {
+  width: 100vw;
+  height: 80vh;
+}
+
+.search-form{
+	text-align: center;
+	position: absolute;
+  bottom: 60%;
+  left: 50%;
+  transform: translateY(30%) translateX(-50%);
+  text-shadow: 0 0 15px #000;
+}
+
+@media only screen and (max-width: 425px) {
+	.search-form{
+		display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .form1{
+	  padding-right: 0;
+  }
+}
+
+
+
+.title-text{
+	padding-top: 40px;
+	font-family: 'Baskervville', serif;
+	text-align: center;
+}
+
+.create-form{
+	text-align: center;
+	position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateY(30%) translateX(-50%);
+  text-shadow: 0 0 15px #000;
+}
+
+.gradient3{
+    /*ボタンの形状*/
+    display: inline-block;
+    padding: 18px 60px;
+    border-radius:30px;
+    text-decoration: none;
+    border:1px solid #43FF6B;
+    color: #43FF6B;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.gradient3:hover{
+    /*ボタンの形状*/
+    border-color:transparent;
+    color: #fff;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #43FF6B 0%, #D0FF43 50%, #46EEFF 100%);
+    background-size: 200% auto;
+    background-position: right center;
+    /*ボックスの影*/
+    box-shadow: 0 5px 10px rgba(250,108,159,0.4);
+}

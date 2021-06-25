@@ -1,4 +1,4 @@
-<header class="border border-dark">
+<header class="menu1">
   <%= render 'layouts/header' %>
 </header>
 <div class="scrolldown3"><span>Scroll</span></div>
@@ -16,25 +16,22 @@
   　<h2 class="about-h">Create <span>2021/06/30</span></h2>
   </div>
 </section>
-<section id="box3"  class="box">
+<section id="box3" class="box">
   <div cllass="box-item">
   <h1 class="box-title">GUEST LOGIN</h1>
   <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "gradient4" %>
   </div>
 </section>
-<section id="box4"  class="box">
+<section id="box4" class="box">
   <div cllass="box-item">
   <h1 class="box-title">LOGIN</h1></br>
   <%= link_to "ログイン", new_user_session_path, class: "gradient4" %>
   </div>
 </section>
-<section id="box5"  class="box">
+<section id="box5" class="box">
   <div cllass="box-item">
   <h1 class="box-title">SIGNUP</h1></br>
   <%= link_to "サインイン", new_user_registration_path, class: "gradient4" %>
   </div>
 </section>
 </div>
-<footer>
-  <%= render 'layouts/footer' %>
-</footer>

@@ -73,7 +73,7 @@ gem 'rails-i18n'
 gem 'gon'
 gem 'geocoder'
 gem 'google-cloud-vision'
-gem 'particles-js-rails', '2.0.0'
+
 
 gem 'dotenv-rails'
 group :production do

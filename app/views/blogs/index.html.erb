@@ -1,12 +1,20 @@
-          <h3 class="midasi">Search</h3>
-          <%= render 'layouts/search' %>
-          <h2 class="midasi">Memories</h2>
-            <div class="my-4">
-            <h3>Create Memory</h3>
-            <h6>みんなと記録を共有しよう</h6>
-            <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus button-s" %>
+<div id="slider2"></div>
+<div class="search-form">
+  <h3 class="text-white title-text">Country Search</h3>
+  <form class="search" action="">
+    <%= form_with url: search_country_path, local: true, method: :get do |f| %>
+      <%= f.country_select :country_name, priority_countries: ["JP", "US"], class: "input bg-white" %>
+      <%= f.submit "検索", class: "button" %>
+    <% end %>
+  </form>
+</div>
+            <div class="create-form">
+            <% unless current_user == User.guest_user %>
+            <h3 class="text-white title-text">Create Memory</h3>
+            <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus gradient3" %>
+            <% end %>
             </div>
-            <h3>Memories</h3>
+            <h1 class="title-text">Memories</h1>
             <div class="box">
             <ul class="gallery">
               <% @blogs.each do |blog| %>

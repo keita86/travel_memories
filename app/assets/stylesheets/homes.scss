@@ -4,7 +4,6 @@
 
 
 #box1 {
-  position: relative;
   height: 100vh;
 }
 
@@ -14,12 +13,23 @@
 }
 
 .slide {
+  position: relative;
   width: 100%;
   height: 100vh;
   scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  // overflow: scroll; /* .wrap内をスクロール可能にする。必要です */
   -webkit-overflow-scrolling: touch;
 }
+
+.menu1 {
+	position:fixed;
+	font-size:1em;
+	z-index: 10;
+	list-style: none;
+	top: 20px;
+  right: 20px;
+}
+
 
 section {
   width: 100%;
@@ -29,7 +39,7 @@ section {
 
 .title-logo {
   position: absolute;
-  bottom: 50%;
+  bottom: 40%;
   left: 50%;
   width: 800px;
   height: 300px;
@@ -71,15 +81,16 @@ section {
   background-image: image-url("averie.jpg");
   background-position: center;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+
 }
 #box5{
   background-image: image-url("travel.jpg");
   background-position: center;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+}
+
+#box1.box{
+ justify-content: flex-start;
 }
 
 .box {
@@ -180,17 +191,6 @@ section {
     }
 }
 
-footer{
-  position: fixed;
-  left: 20px;
-  top: 40%;
-  color: #fff;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  -ms-writing-mode: tb-rl;
-  -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-}
 
 @media screen and (max-width: 425px) {
   small{
@@ -205,27 +205,87 @@ footer{
   font-family: 'Baskervville', serif;
 }
 
-#g-nav{
+
+.gnav{
+	display: flex;
+	justify-content: center;
+	list-style: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+}
+
+.gnav a{
+	display: block;
+	padding: 5px 10px;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  text-shadow:  0 3px 4px rgba(0, 0, 0, 0.7);
+}
+
+.gnav-item li a{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.gnav-item li.current a,
+.gnav-item li a:hover{
+	color:rgba(255,255,255,0.7);
+}
+
+.gnav-item li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background: rgba(255,255,255,0.9);
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+/*現在地の形状の設定*/
+.gnav-item li.current a::after {
+    transform: scale(0.2, 1);/*X方向に0.2スケール拡大*/
+}
+
+/*現在地を含むhoverの設定*/
+.gna-itemv li.current a:hover::after,
+.gnav-item li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+@media screen and (max-width: 1024px) {
+  #g-nav{
     /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
-    position:fixed;
+    position: fixed;
     z-index: 999;
     /*ナビのスタート位置と形状*/
-  top: 0;
+    top: 0;
     right: -120%;
-  width: 100%;
+    width: 100%;
     height: 100vh;/*ナビの高さ*/
-  background:#999;
-    /*動き*/
-  transition: all 0.6s;
-}
+    background:#999;
+      /*動き*/
+    transition: all 0.6s;
+  }
 
-/*アクティブクラスがついたら位置を0に*/
-#g-nav.panelactive{
+  .gnav{
+    display: block;
+  }
+  /*アクティブクラスがついたら位置を0に*/
+  #g-nav.panelactive{
     right: 0;
-}
+  }
 
-/*ナビゲーションの縦スクロール*/
-#g-nav.panelactive #g-nav-list{
+  /*ナビゲーションの縦スクロール*/
+  #g-nav.panelactive #g-nav-list{
     /*ナビの数が増えた場合縦スクロール*/
     position: fixed;
     z-index: 999;
@@ -233,82 +293,83 @@ footer{
     height: 100vh;/*表示する高さ*/
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-}
+  }
 
 /*ナビゲーション*/
-#g-nav ul {
+  #g-nav ul {
     /*ナビゲーション天地中央揃え*/
     position: absolute;
     z-index: 999;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-}
+  }
 
-#g-nav li{
-  list-style: none;
+  #g-nav li{
+    list-style: none;
     text-align: center;
-}
+  }
 
-#g-nav li a{
-  color: #333;
-  text-decoration: none;
-  padding:10px;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-}
+  #g-nav li a{
+    color: #333;
+    text-decoration: none;
+    padding:10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+  }
 
-.openbtn1{
-  position:fixed;
+  .openbtn1{
+    position:fixed;
     z-index: 9999;
-  top: 20px;
-  right: 10px;
-  cursor: pointer;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
     width: 80px;
     height: 80px;
-}
+  }
 
-.openbtn1 span{
+  .openbtn1 span{
     display: inline-block;
     transition: all .4s;
     position: absolute;
     left: 14px;
     height: 3px;
     border-radius: 2px;
-  background-color: #666;
+    background-color: #666;
     width: 45%;
   }
 
-.openbtn1 span:nth-of-type(1) {
-  top:15px;
-}
+  .openbtn1 span:nth-of-type(1) {
+    top:15px;
+  }
 
-.openbtn1 span:nth-of-type(2) {
-  top:23px;
-}
+  .openbtn1 span:nth-of-type(2) {
+    top:23px;
+  }
 
-.openbtn1 span:nth-of-type(3) {
-  top:31px;
-}
+  .openbtn1 span:nth-of-type(3) {
+    top:31px;
+  }
 
-.openbtn1.active span:nth-of-type(1) {
+  .openbtn1.active span:nth-of-type(1) {
     top: 18px;
     left: 18px;
     transform: translateY(6px) rotate(-45deg);
     width: 30%;
-}
+  }
 
-.openbtn1.active span:nth-of-type(2) {
-  opacity: 0;
-}
+  .openbtn1.active span:nth-of-type(2) {
+    opacity: 0;
+  }
 
-.openbtn1.active span:nth-of-type(3){
+  .openbtn1.active span:nth-of-type(3){
     top: 30px;
     left: 18px;
     transform: translateY(-6px) rotate(45deg);
     width: 30%;
+  }
 }
 
 .scrolldown3{

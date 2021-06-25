@@ -37,6 +37,7 @@ function initMap() {
       map: map
     });
   }
+
 document.addEventListener("turbolinks:load", function () {
   $(document).ready(function(){
     $(".openbtn1").click(function () {
@@ -80,3 +81,14 @@ document.addEventListener("turbolinks:load", function () {
   });
 });
 
+document.addEventListener("turbolinks:load", function () {
+  $('#slider2').vegas({
+    overlay: true,
+    transition: 'blur',
+    transitionDuration: 2000,
+    delay: 10000,
+    animationDuration: 20000,
+    animation: 'kenburns',
+    slides: responsiveImage,
+  });
+});
