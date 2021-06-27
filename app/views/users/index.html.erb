@@ -2,6 +2,9 @@
     <h1 class="title-text">Users</h1>
   </div>
   <div class="user-index-item">
-    <%= render 'users/list', users: @users %>
+    <div class="box">
+      <%= render 'users/list', users: @users %>
+    </div>
+
     <%= paginate(@users) %>
   </div>
