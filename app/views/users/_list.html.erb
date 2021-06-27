@@ -1,36 +1,31 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th><h6>image</h6></th>
-      <th><h6>name</h6></th>
-      <th><h6>Follow</h6></th>
-      <th><h6>Follower</h6></th>
-      <th><h6>+follow</h6></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% users.each do |user| %>
-    <tr>
-      <td>
-        <%= link_to user_path(user) do %>
-        <%= attachment_image_tag(user, :profile_image,  fallback: "no_image.jpg", :size => '30x30', class: "rounded-circle" ) %>
-        <% end %>
-      </td>
-      <td><%= user.name %></td>
-      <td><%= user.followings.count %></td>
-      <td><%= user.followers.count %></td>
-      <td>
-        <% if user.id == current_user.id %>
-          <%= link_to "show", user_path(user), class: "button-n" %>
+<div class="list">
+  <% users.each do |user| %>
+  <div class="prf-box">
+    <div class="image-area mx-auto">
+      <%= link_to user_path(user) do %>
+      <%= attachment_image_tag(user, :profile_image,  fallback: "no_image.jpg", :size => '192x192', class: "rounded-circle image-prf" ) %>
+      <% end %>
+    </div>
+    <div class="name-area">
+      <%= user.name %>
+    </div>
+    <div class="follow-area">
+      <%= user.followings.count %>
+    </div>
+    <div class="follower-area">
+      <%= user.followers.count %>
+    </div>
+    <div class="follow-button-area">
+      <% if user.id == current_user.id %>
+       <%= link_to "show", user_path(user), class: "button-n" %>
+      <% else %>
+        <% if current_user.following?(user) %>
+          <%= link_to "Unfollow", user_relationships_path(user.id), method: :delete, class: "button-d" %>
         <% else %>
-          <% if current_user.following?(user) %>
-            <%= link_to "Unfollow", user_relationships_path(user.id), method: :delete, class: "button-d" %>
-          <% else %>
-            <%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "button-p" %>
-          <% end %>
+          <%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "button-p" %>
         <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>

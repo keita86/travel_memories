@@ -4,14 +4,14 @@
       <h3>Blog Search</h3>
       <%= form_with url: search_path, local: true, method: :get do |f| %>
         <%= f.text_field :word, placeholder: "キーワード検索" %>
-        <%= f.submit "検索", class: "button-p" %>
+        <%= f.submit "検索", class: "fas fa-search button-p" %>
       <% end %>
     </div>
     <div class="country-form">
     <h3>Country Search</h3>
       <%= form_with url: search_country_path, local: true, method: :get do |f| %>
         <%= f.country_select :country_name, priority_countries: ["JP", "US"], class: "form-control" %>
-        <%= f.submit "検索", class: "button-p" %>
+        <%= f.submit "検索", class: "fas fa-search" %>
       <% end %>
     </div>
   </div>

@@ -74,6 +74,7 @@ gem 'gon'
 gem 'geocoder'
 gem 'google-cloud-vision'
 
+
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

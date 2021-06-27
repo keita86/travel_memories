@@ -1,30 +1,10 @@
-<div class="haikei2">
-  <div class="container py-5">
-    <div class="blog-box bg-white">
-      <div class="container">
-        <div class="row mt-3 offset-1">
-          <h3 class="midasi">Search</h3>
-        </div>
-        <div class="row">
-          <%= render 'layouts/search' %>
-        </div>
-      </div>
-    </div>
-    <div class="user-box my-5 bg-white">
-      <div class="container">
-        <div class="row mt-3 offset-1">
-          <h2 class="midasi">Users</h2>
-        </div>
-        <div class="row mt-3">
-          <div class="user-box-item my-5">
-            <h3 class="mb-5">User Index</h3>
-            <%= render 'users/list', users: @users %>
-            <div class="mb-4 d-flex justify-content-center">
-              <%= paginate(@users) %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="user-index-title">
+    <h1 class="title-text">Users</h1>
   </div>
-</div>
+  <div class="user-index-item">
+    <div class="box">
+      <%= render 'users/list', users: @users %>
+    </div>
+
+    <%= paginate(@users) %>
+  </div>

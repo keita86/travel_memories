@@ -1,42 +1,30 @@
-<div class="container nav-head">
-  <div class="row d-flex justify-content-between">
-    <div class="nav-logo">
-      <a class="navbar-brand p-3" href="/"><%= image_tag('Logotra.jpg', :size => '180x70') %></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    <div class="nav">
+<div class="openbtn1"><span></span><span></span><span></span></div>
+<nav id="g-nav">
+  <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+    <ul class="gnav gnav-item">
     <% if user_signed_in? %>
-      <li class="navmenu mr-2">
-        <%= link_to "記憶", blogs_path, class: "fas fa-plane btn btn-outline-secondary" %>
+      <li class="form1">
+        <a>
+          <form class="search" action="">
+          <%= form_with url: search_path, local: true, method: :get do |f| %>
+            <%= f.text_field :word, class: "input bg-white", placeholder: "キーワード検索" %>
+            <%= f.submit "Search", class: "button" %>
+          <% end %>
+          </form>
+        </a>
       </li>
-      <li class="navmenu mr-2">
-        <%= link_to "マイページ", user_path(current_user), class: "fas fa-portrait btn btn-outline-secondary" %>
-      </li>
-      <li class="navmenu mr-2">
-        <%= link_to "会員", users_path, class: "fas fa-paper-plane btn btn-outline-secondary" %>
-      </li>
-      <li class="navmenu mr-2">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-plane-departure btn btn-outline-secondary" %>
-      </li>
-      <li class="navmenu mr-2">
-        <%= link_to "ランキング", monthly_rank_path, class: "fas fa-crown btn btn-outline-secondary" %>
-      </li>
+      <li class="nav-text"><a><h3><%= link_to "Memory", blogs_path %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "MyPage", user_path(current_user) %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "Users", users_path %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "LogOut", destroy_user_session_path, method: :delete %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "Ranking", monthly_rank_path %></h3></a></li>
     <% else %>
-      <li class="navmenu mr-2">
-        <%= link_to "Top", root_path, class: "fas fa-vihara btn btn-outline-secondary" %>
-      </li>
-      <li class="navmenu mr-2">
-        <%= link_to "About", about_path, class: "fas fa-map-signs btn btn-outline-secondary" %>
-      </li>
-      <li class="navmenu mr-2">
-        <%= link_to "サインイン", new_user_registration_path, class: "fas fa-signature btn btn-outline-secondary" %>
-      </li>
-      <li class="navmenu mr-2">
-        <%= link_to "ログイン", new_user_session_path, class: "fas fa-plane-arrival btn btn-outline-secondary" %>
-      </li>
+      <li class="nav-text"><a href="#box1"><h3>Top</h3></a></li>
+      <li class="nav-text"><a href="#box2"><h3>About</h3></a></li>
+      <li class="nav-text"><a href="#box3"><h3>Guest</h3></a></li>
+      <li class="nav-text"><a href="#box4"><h3>LogIn</h3></a></li>
+      <li class="nav-text"><a href="#box5"><h3>SignUp</h3></a></li>
     <% end %>
-    </div>
+    </ul>
   </div>
-</div>
+</nav>

@@ -4,6 +4,19 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      user.name = "ゲスト"
+    end
+  end
+  
+  def self.guest_user
+    User.find(6)
+  end
+  
+
   attachment :profile_image
   has_many :blogs, dependent: :destroy
   has_many :blog_comments, dependent: :destroy

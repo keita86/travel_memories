@@ -3,6 +3,548 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.about-h{
-  margin-bottom: 40px;
+#box1 {
+  height: 100vh;
 }
+
+#slider {
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  // overflow: scroll; /* .wrap内をスクロール可能にする。必要です */
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu1 {
+	position:fixed;
+	font-size:1em;
+	z-index: 10;
+	list-style: none;
+	top: 20px;
+  right: 50px;
+}
+
+
+section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.title-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  width: 800px;
+  height: 300px;
+  transform: translateY(30%) translateX(-50%);
+  color: #fff;
+  text-shadow: 0 0 15px #666;
+}
+
+@media only screen and (max-width: 768px){
+  .title-logo {
+    width: 640px;
+    height: 240px;
+  }
+}
+
+@media only screen and (max-width: 425px){
+  .title-logo {
+    width: 240px;
+    height: 90px;
+  }
+}
+
+
+#box2{
+  background-image: image-url("camera.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+#box3{
+  background-image: image-url("jakob.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+#box4{
+  background-image: image-url("averie.jpg");
+  background-position: center;
+  background-size: cover;
+
+}
+#box5{
+  background-image: image-url("travel.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#box1.box{
+ justify-content: flex-start;
+}
+
+.box {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.box-title{
+  color: #fff;
+  text-shadow:  0 3px 4px rgba(0, 0, 0, 1);
+}
+
+.about-1h{
+  font-size: 0.9rem;
+    margin: 40px 0 40px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+}
+
+.about-h{
+  font-size: 0.9rem;
+    margin: 0 0 40px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+  .about-1h{
+  font-size: 0.6rem;
+    margin: 20px 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+  .about-h{
+  font-size: 0.6rem;
+    margin: 0 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 425px){
+  .about-1h{
+  font-size: 0.3rem;
+    margin: 20px 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+  .about-h{
+  font-size: 0.3rem;
+    margin: 0 0 20px 0;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: 425px){
+  .title-logo {
+    width: 240px;
+    height: 90px;
+  }
+}
+
+.abouttext h2 span {
+    font-size: 1.3rem;
+    display: block;
+    text-transform: uppercase;
+}
+
+.abouttext {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  text-align: left;
+  letter-spacing: 0.03em;
+}
+
+@media screen and (max-width:768px) {
+.abouttext{
+     margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+  small{
+    font-size: 10%;
+    }
+}
+
+
+.nav-text {
+  font-size: 1.3rem;
+  display: block;
+  font-family: 'Baskervville', serif;
+}
+
+
+.gnav{
+	display: flex;
+	justify-content: center;
+	list-style: none;
+  // text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+}
+
+.gnav a{
+	display: block;
+	padding: 5px 10px;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  text-shadow:  0 3px 4px rgba(0, 0, 0, 0.9);
+}
+
+.gnav-item li a{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.gnav-item li.current a,
+.gnav-item li a:hover{
+	color:rgba(255,255,255,0.7);
+}
+
+.gnav-item li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background: rgba(255,255,255,0.9);
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+/*現在地の形状の設定*/
+.gnav-item li.current a::after {
+    transform: scale(0.2, 1);/*X方向に0.2スケール拡大*/
+}
+
+/*現在地を含むhoverの設定*/
+.gna-itemv li.current a:hover::after,
+.gnav-item li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+@media screen and (max-width: 1024px) {
+  #g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+    top: 0;
+    right: -120%;
+    width: 100%;
+    height: 100vh;/*ナビの高さ*/
+    background:#999;
+      /*動き*/
+    transition: all 0.6s;
+  }
+
+  .gnav{
+    display: block;
+  }
+  /*アクティブクラスがついたら位置を0に*/
+  #g-nav.panelactive{
+    right: 0;
+  }
+
+  /*ナビゲーションの縦スクロール*/
+  #g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+/*ナビゲーション*/
+  #g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  #g-nav li{
+    list-style: none;
+    text-align: center;
+  }
+
+  #g-nav li a{
+    color: #333;
+    text-decoration: none;
+    padding:10px;
+    display: block;
+    // text-transform: none;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+  }
+
+  .openbtn1{
+    position:fixed;
+    z-index: 9999;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+  }
+
+  .openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #666;
+    width: 45%;
+  }
+
+  .openbtn1 span:nth-of-type(1) {
+    top:15px;
+  }
+
+  .openbtn1 span:nth-of-type(2) {
+    top:23px;
+  }
+
+  .openbtn1 span:nth-of-type(3) {
+    top:31px;
+  }
+
+  .openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+  }
+
+  .openbtn1.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+  }
+}
+
+.scrolldown3{
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+  z-index: 99;
+    /*マウスの動き1.6秒かけて動く永遠にループ*/
+  animation:mousemove 1.6s ease-in-out infinite;
+}
+
+/*下からの距離が変化して上から下に動く*/
+@keyframes mousemove{
+      0%{bottom:10px;}
+      50%{bottom:5px;}
+     100%{bottom:10px;}
+ }
+
+/*Scrollテキストの描写*/
+.scrolldown3 span{
+    /*描画位置*/
+  position: absolute;
+  left:-15px;
+  bottom:45px;
+    /*テキストの形状*/
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+/*マウスの中の線描写 */
+.scrolldown3 span::after{
+  content: "";
+    /*描画位置*/
+  position: absolute;
+  top:10px;
+  left:17px;
+    /*線の形状*/
+  width: 1px;
+  height: 15px;
+  background: #eee;
+    /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: mousepathmove 1.4s linear infinite;
+  opacity:0;
+}
+
+/*上からの距離・不透明度・高さが変化して上から下に流れる*/
+@keyframes mousepathmove{
+  0%{
+    height:0;
+    top:10px;
+    opacity: 0;
+  }
+  50%{
+    height:15px;
+    opacity: 1;
+  }
+  100%{
+    height:0;
+    top:30px;
+    opacity: 0;
+  }
+}
+
+/*マウスの描写 */
+.scrolldown3:before {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom:0;
+    left:-10px;
+    /*マウスの形状*/
+  width:25px;
+  height:37px;
+  border-radius: 10px;
+  border:1px solid #eee;
+}
+
+
+/*マウスの中の丸の描写*/
+.scrolldown3:after{
+  content:"";
+    /*描画位置*/
+  position: absolute;
+  bottom:26px;
+  left:0;
+    /*丸の形状*/
+  width:5px;
+  height: 5px;
+  border-radius: 50%;
+  border:1px solid #eee;
+}
+
+.gradient4{
+    /*ボタンの形状*/
+    display: inline-block;
+    padding: 18px 60px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #fa6c9f;
+    color: #fa6c9f;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.gradient4:hover{
+    /*ボタンの形状*/
+    border-color: transparent;
+    color: #fff;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #fa6c9f 0%, #ffe140 50%, #ff357f 100%);
+    background-size: 200% auto;
+    background-position: right center;
+    /*ボックスの影*/
+    box-shadow: 0 5px 10px rgba(250,108,159,0.4);
+}
+
+.haikei {
+	width: 100%;
+	height: 100vh;
+	background:linear-gradient(45deg, #fa6c9f, #ffe140, #ff357f);/*グラデーションを定義*/
+	background-size: 200% 200%;/*サイズを大きくひきのばす*/
+	animation: bggradient 20s ease infinite;
+}
+
+@keyframes bggradient{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.form-sign {
+  width: 300px;
+  text-align: center;
+  margin: 2em auto;
+  color: #666;
+  border-top: solid 6px #ffddbb;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+.box-form {
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form-logo {
+  width: 250px;
+  height: 50px;
+}
+@media screen and (max-width:375px) {
+  .form-logo{
+    width: 200px;
+    height: 40px;
+  }
+  .form-sign {
+    width: 240px;
+  }
+  .form-title{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .form-sign {
+    width: 200px;
+  }
+}
+
