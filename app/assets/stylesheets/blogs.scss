@@ -3,145 +3,129 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.blog-box{
-  display: flex;
-  flex-wrap: wrap;
+.gallery{
+  columns: 3;/*段組みの数*/
+  padding: 0 15px;/*ギャラリー左右に余白をつける*/
+  margin: 0;
+}
+
+.gallery li {
+  margin-bottom: 20px;/*各画像下に余白をつける*/
+  list-style: none;
 }
 
 .box-item{
-  margin: 12px;
+	position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
 }
 
-.Photo{
-  margin: 1em 0.9em;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: 0 0;
-  padding-bottom: 5px;
+/*ギャラリー内のイメージは横幅100%にする*/
+.gallery img{
+	width: 100%;
+	border-radius: 20px;
+	height: auto;
+	vertical-align: bottom;/*画像の下にできる余白を削除*/}
+
+/*　横幅900px以下の段組み設定　*/
+@media only screen and (max-width: 900px) {
+	.gallery{
+	columns: 3;
+	}
 }
 
-.box {
-  position   : relative;
-  width  : 100%;
-  height     : 700px;
+@media only screen and (max-width: 768px) {
+	.gallery{
+	columns: 2;
+	}
 }
 
-.box .bgimg {
-  position   : absolute;
-  width  : 100%;
-  height     : 700px;
-  top        : 0;
-  left       : 0;
-  bottom     : 0;
-  right      : 0;
-  opacity    : 0;
-  background-size: cover;
-  animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s */
+@media only screen and (max-width: 425px) {
+	.gallery{
+	columns: 1;
+	}
+
+	.box-item{
+		padding: 0 0 30px 0;
+	}
 }
 
-.box .tn-1 {
-  background-image : image-url("tianshu.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 0s;
-  background-position: center;
-  background-size: cover;
-}
-.box .tn-2 {
-  background-image : image-url("busan-night.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 5s;
-  background-position: center;
-  background-size: cover;
-}
-.box .tn-3 {
-  background-image : image-url("street-america.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 10s;
-  background-position: center;
-  background-size: cover;
-}
-.box .tn-4 {
-  background-image : image-url("keswan.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 15s;
-  background-position: center;
-  background-size: cover;
+.form1{
+	padding-right: 120px;
 }
 
-.box .an-1 {
-  background-image : image-url("hongkong.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 0s;
-  background-position: center;
-  background-size: cover;
-}
-.box .an-2 {
-  background-image : image-url("landscape.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 5s;
-  background-position: center;
-  background-size: cover;
-}
-.box .an-3 {
-  background-image : image-url("sydney.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 10s;
-  background-position: center;
-  background-size: cover;
-}
-.box .an-4 {
-  background-image : image-url("harry.jpg");   /* 背景の画像を指定 */
-  animation-delay  : 15s;
-  background-position: center;
-  background-size: cover;
+#slider2 {
+  width: 100vw;
+  height: 80vh;
 }
 
-@keyframes bgAnime {
-   0% { opacity: 0; }
-   5% { opacity: 1; }
-  25% { opacity: 1; }
-  30% { opacity: 0; }
- 100% { opacity: 0; }
+.search-form{
+	text-align: center;
+	position: absolute;
+  bottom: 60%;
+  left: 50%;
+  transform: translateY(30%) translateX(-50%);
+  text-shadow: 0 0 15px #000;
 }
 
-#map{
-  width: 470px;
-  height: 400px;
+@media only screen and (max-width: 425px) {
+	.search-form{
+		display: none;
+  }
 }
 
-.comment-box{
-  width: 530px;
+@media only screen and (max-width: 1024px) {
+  .form1{
+	  padding-right: 0;
+  }
 }
 
-.memories-box{
-  width: 500px;
-  padding: 0.5em 1em;
-  margin: 2em auto;
-  color: #5d627b;
-  background: white;
-  border-top: solid 5px #5d627b;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 1);
+
+
+.title-text{
+	padding-top: 40px;
+	font-family: 'Baskervville', serif;
+	text-align: center;
 }
-.create-memory-box{
-  width: 500px;
-  padding: 0.5em 1em;
-  margin: 2em auto;
-  color: #5d627b;
-  background: white;
-  border-top: solid 5px #5d627b;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 1);
+
+.create-form{
+	text-align: center;
+	position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateY(30%) translateX(-50%);
+  text-shadow: 0 0 15px #000;
+}
+
+.gradient3{
+    /*ボタンの形状*/
+    display: inline-block;
+    padding: 18px 60px;
+    border-radius:30px;
+    text-decoration: none;
+    border:1px solid #43FF6B;
+    color: #43FF6B;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.gradient3:hover{
+    /*ボタンの形状*/
+    border-color:transparent;
+    color: #fff;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #43FF6B 0%, #D0FF43 50%, #46EEFF 100%);
+    background-size: 200% auto;
+    background-position: right center;
+    /*ボックスの影*/
+    box-shadow: 0 5px 10px rgba(250,108,159,0.4);
+}
+
+.user-index-title{
   text-align: center;
+  padding-top:130px;
 }
 
-.pagenation{
-  padding-bottom: 50px;
-}
-
-.label {
-  background-color: #ffddbb;
-  font-weight: 500;
-  display: inline;
-  padding: .2em .6em .3em;
-  font-size: 75%;
-  font-weight: bold;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
-}
