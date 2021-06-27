@@ -13,17 +13,17 @@
           </form>
         </a>
       </li>
-      <li class="nav-text"><a><h3><%= link_to "MEMORY", blogs_path %></h3></a></li>
-      <li class="nav-text"><a><h3><%= link_to "MY PAGE", user_path(current_user) %></h3></a></li>
-      <li class="nav-text"><a><h3><%= link_to "USERS", users_path %></h3></a></li>
-      <li class="nav-text"><a><h3><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></h3></a></li>
-      <li class="nav-text"><a><h3><%= link_to "RANKING", monthly_rank_path %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "Memory", blogs_path %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "MyPage", user_path(current_user) %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "Users", users_path %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "LogOut", destroy_user_session_path, method: :delete %></h3></a></li>
+      <li class="nav-text"><a><h3><%= link_to "Ranking", monthly_rank_path %></h3></a></li>
     <% else %>
-      <li class="nav-text"><a href="#box1"><h3>TOP</h3></a></li>
-      <li class="nav-text"><a href="#box2"><h3>ABOUT</h3></a></li>
-      <li class="nav-text"><a href="#box3"><h3>GUEST</h3></a></li>
-      <li class="nav-text"><a href="#box4"><h3>LOG IN</h3></a></li>
-      <li class="nav-text"><a href="#box5"><h3>SIGN UP</h3></a></li>
+      <li class="nav-text"><a href="#box1"><h3>Top</h3></a></li>
+      <li class="nav-text"><a href="#box2"><h3>About</h3></a></li>
+      <li class="nav-text"><a href="#box3"><h3>Guest</h3></a></li>
+      <li class="nav-text"><a href="#box4"><h3>LogIn</h3></a></li>
+      <li class="nav-text"><a href="#box5"><h3>SignUp</h3></a></li>
     <% end %>
     </ul>
   </div>
