@@ -98,7 +98,7 @@
   text-shadow: 0 0 15px #000;
 }
 
-.gradient3{
+.button-s{
     /*ボタンの形状*/
     display: inline-block;
     padding: 18px 60px;
@@ -112,7 +112,7 @@
 }
 
 /*hoverした際、グラデーションと影を付ける*/
-.gradient3:hover{
+.button-s:hover{
     /*ボタンの形状*/
     border-color:transparent;
     color: #fff;
@@ -121,7 +121,7 @@
     background-size: 200% auto;
     background-position: right center;
     /*ボックスの影*/
-    box-shadow: 0 5px 10px rgba(250,108,159,0.4);
+    box-shadow: 0 5px 10px rgba(159,250,108,0.4);
 }
 
 .user-index-title{

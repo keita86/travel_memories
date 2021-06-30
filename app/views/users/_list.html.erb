@@ -6,25 +6,27 @@
       <%= attachment_image_tag(user, :profile_image,  fallback: "no_image.jpg", :size => '192x192', class: "rounded-circle image-prf" ) %>
       <% end %>
     </div>
-    <div class="name-area">
-      <%= user.name %>
+    <div class="py-2 name-area">
+      <h3><%= user.name %></h3>
     </div>
     <div class="follow-area">
-      <%= user.followings.count %>
+      Follow<%= user.followings.count %>
     </div>
-    <div class="follower-area">
-      <%= user.followers.count %>
+    <div class="follower-area py-2">
+      Follower<%= user.followers.count %>
     </div>
-    <div class="follow-button-area">
+    <div class="follow-button-area py-2">
+    <% unless current_user == User.guest_user %>
       <% if user.id == current_user.id %>
-       <%= link_to "show", user_path(user), class: "button-n" %>
+       <%= link_to "show", user_path(user), class: "button-s" %>
       <% else %>
         <% if current_user.following?(user) %>
           <%= link_to "Unfollow", user_relationships_path(user.id), method: :delete, class: "button-d" %>
         <% else %>
-          <%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "button-p" %>
+          <%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "gradient4" %>
         <% end %>
       <% end %>
+    <% end %>
     </div>
   </div>
   <% end %>
