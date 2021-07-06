@@ -9,6 +9,8 @@
       　   <%= form_with model: @user, local: true do |f| %>
             <h4 class="my-3">Plofile Image</h4>
             <%= f.attachment_field :profile_image %>
+            <h4 class="my-3">Home Image</h4>
+            <%= f.attachment_field :home_image %>
             <h4 class="my-3">Name</h4>
             <%= f.text_field :name, placeholder: "名前" %>
             <h4 class="my-3">Introduction</h4>
