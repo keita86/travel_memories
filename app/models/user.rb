@@ -11,11 +11,12 @@ class User < ApplicationRecord
       user.name = "ゲスト"
     end
   end
-  
+
   def self.guest_user
     User.find(6)
   end
-  
+
+  attachment :home_image
 
   attachment :profile_image
   has_many :blogs, dependent: :destroy

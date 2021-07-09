@@ -8,26 +8,26 @@
     <% end %>
   </form>
 </div>
-            <div class="create-form">
-            <% unless current_user == User.guest_user %>
-            <h3 class="text-white title-text">Create Memory</h3>
-            <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus button-s" %>
-            <% end %>
-            </div>
-            <h1 class="title-text">Memories</h1>
-            <div class="box">
-            <ul class="gallery">
-              <% @blogs.each do |blog| %>
-              <li>
-                  <div class="box-item">
-                  <%= link_to blog_path(blog) do %>
-                  <%= attachment_image_tag blog, :image %>
-                  <% end %>
-                </div>
-              </li>
-              <% end %>
-            </ul>
-            </div>
-            <div class="mb-4 d-flex justify-content-center">
-               <%= paginate(@blogs) %>
-            </div>
+<div class="create-form">
+  <% unless current_user == User.guest_user %>
+    <h3 class="text-white title-text">Create Memory</h3>
+    <%= link_to "Create New Memory", new_blog_path, class: "fas fa-plus button-s" %>
+  <% end %>
+</div>
+<h1 class="title-text">Memories</h1>
+<div class="box">
+  <ul class="gallery">
+    <% @blogs.each do |blog| %>
+    <li>
+      <div class="box-item">
+        <%= link_to blog_path(blog) do %>
+        <%= attachment_image_tag blog, :image %>
+        <% end %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<div class="mb-4 d-flex justify-content-center">
+  <%= paginate(@blogs) %>
+</div>

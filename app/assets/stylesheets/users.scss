@@ -86,3 +86,25 @@
     /*ボックスの影*/
     box-shadow: 0 5px 10px rgba(10,159,250,0.4);
 }
+
+.container{
+  padding-top: 70px;
+}
+
+.homeImage1{
+  border-radius: 30px
+}
+
+.image-prf2{
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.image-area2 {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to right bottom, #ff5f6d, #ffc371);
+  border: solid 1px #fff;
+  border-radius: 50%;
+  margin-top: -100px;
+}
