@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @blogs = @user.blogs.page(params[:page]).per(8).order(created_at: :desc)
+    @blogs = @user.blogs.page(params[:page]).per(20).order(created_at: :desc)
   end
 
   def edit
