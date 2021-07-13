@@ -14,12 +14,12 @@
   <div class="plfFollow d-flex justify-content-center">
     <div class="pr-2">
     <%= link_to user_followings_path(user) do %>
-      <h4>follow<%= user.followings.count %></h4>
+      <h4 class="text-dark">follow<%= user.followings.count %></h4>
     <% end %>
     </div>
     <div class="pl-2">
     <%= link_to user_followers_path(user) do %>
-      <h4>follower<%= user.followers.count %></h4>
+      <h4 class="text-dark">follower<%= user.followers.count %></h4>
     <% end %>
     </div>
   </div>
@@ -28,9 +28,9 @@
       <p><%= link_to "プロフィール編集", edit_user_path(user), class: "button-d" %></p>
     <% else %>
       <% if current_user.following?(user) %>
-        <%= link_to "Unfollow", user_relationships_path(user.id), method: :delete, class: "button-d" %>
+        <%= link_to "Follow Now", user_relationships_path(user.id), method: :delete, class: "gradient4" %>
       <% else %>
-        <%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "button-p" %>
+        <%= link_to "Unfollow Now", user_relationships_path(user.id), method: :post, class: "button-d" %>
       <% end %>
     <% end %>
   </div>

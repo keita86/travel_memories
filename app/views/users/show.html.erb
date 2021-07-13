@@ -3,7 +3,7 @@
     <%= render 'users/info', user: @user %>
   </div>
 </div>
-  <h1 class="title-text">Memories</h1>
+  <h1 class="title-text"><%= @user.name %>'s Memories</h1>
   <div class="box">
     <ul class="gallery">
       <% @blogs.each do |blog| %>
