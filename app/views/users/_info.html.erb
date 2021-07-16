@@ -25,12 +25,12 @@
   </div>
   <div class="userEdit py-2 d-flex justify-content-center">
     <% if user.id == current_user.id %>
-      <p><%= link_to "プロフィール編集", edit_user_path(user), class: "button-d" %></p>
+      <p><%= link_to "プロフィール編集", edit_user_path(user), class: "button-n" %></p>
     <% else %>
       <% if current_user.following?(user) %>
         <%= link_to "Follow Now", user_relationships_path(user.id), method: :delete, class: "gradient4" %>
       <% else %>
-        <%= link_to "Unfollow Now", user_relationships_path(user.id), method: :post, class: "button-d" %>
+        <%= link_to "Unfollow Now", user_relationships_path(user.id), method: :post, class: "button-n" %>
       <% end %>
     <% end %>
   </div>

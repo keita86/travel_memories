@@ -23,7 +23,7 @@
         <% if current_user.following?(user) %>
           <%= link_to "Follow Now", user_relationships_path(user.id), method: :delete, class: "gradient4" %>
         <% else %>
-          <%= link_to "Unfollow Now", user_relationships_path(user.id), method: :post, class: "button-d" %>
+          <%= link_to "Unfollow Now", user_relationships_path(user.id), method: :post, class: "button-n" %>
         <% end %>
       <% end %>
     <% end %>

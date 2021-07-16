@@ -4,55 +4,38 @@
     </div>
         <div class="blog-box-item">
           <h1 class="title-text"><%= @blog.user.name %>'s Memory</h1>
-          <ul class="list-unstyled">
-            <li><%= attachment_image_tag @blog, :image, class: "blog-box-img" %></li>
-            <li>
+            <div class="my-3"><%= attachment_image_tag @blog, :image, class: "blog-box-img" %></div>
               <div class="tag-box">
               <% @blog.tags.each do |tag| %>
                 <span class="label"><%= tag.name %></span>
               <% end %>
               </div>
-            </li>
-            <li><h2><%= @blog.title %></h2></li>
-            <li><h4><%= @blog.description %></h4></li>
-            <li><h4><%= @blog.created_at.strftime('%Y/%m/%d') %></h4></li>
-            <li><h4><%= @blog.address %></h4></li>
-            <li><h4><%= @blog.country_name %></h4></li>
-            <li class="mb-2">
+            <div><h1>『<%= @blog.title %>』</h1></div>
+            <div><h4><%= @blog.description %></h4></div>
+            <div><h6><%= @blog.created_at.strftime('%Y/%m/%d') %></h6></div>
+            <div><h6><%= @blog.address %></h6></li>
+            <div><h6><%= @blog.country_name %></h6></div>
+            <div class="mb-2">
               <% if @blog.user == current_user %>
-                <%= link_to "更新", edit_blog_path(@blog), class: "button-s" %>
-                <%= link_to "削除", blog_path(@blog), method: :delete, class: "button-d" %>
+                <%= link_to "更新", edit_blog_path(@blog), class: "button-ss" %>
+                <%= link_to "削除", blog_path(@blog), method: :delete, class: "button-nn" %>
               <% end %>
-            </li>
-            <li class="mt-2">
+            </div>
+            <div class="mt-2">
               <h3><%= render 'favorites/favorite', blog: @blog %></h3>
-            </li>
-          </ul>
+            </div>
         </div>
         <div class="blog-box-item">
-          <div class="col">
-            <h2>gmap</h2>
             <div id='map'></div>
             <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAP_API"] %>&callback=initMap" async defer></script>
-          </div>
         </div>
-          <div class="blog-box-item comment-box">
-            <div class="row offset-1">
+          <div class="blog-box-item">
+            <div class="comment-box">
               <h3>Comment</h3>
-            </div>
-            <div class="row">
               <div id="blog_comments_area">
                 <%= render partial: 'blog_comments/index', locals: { blog: @blog } %>
               </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col offset-1">
                 <%= render partial: 'blog_comments/form', locals: { blog: @blog, blog_comment: @blog_comment } %>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
