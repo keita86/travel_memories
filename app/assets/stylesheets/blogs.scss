@@ -244,3 +244,139 @@
 .blog-box-item {
   text-align:center;
 }
+
+.rank-time-box{
+   width: 500px;
+   padding: 0.5em 1em;
+   margin: 1em auto;
+ }
+
+ .rank-box{
+   width: 800px;
+   padding: 0.5em 1em;
+   margin: 1em auto;
+   color: #5d627b;
+   background: white;
+   border-top: solid 5px #5d627b;
+   box-shadow: 0 3px 5px rgba(0, 0, 0, 1);
+   text-align: center;
+   border-radius: 30px;
+ }
+
+ .rank-img{
+   width: 700px;
+   margin: 0 auto;
+   border-radius: 30px;
+ }
+
+.button-on{
+    /*ボタンの形状*/
+    display: inline-block;
+    padding: 3px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #fa6c9f;
+    color: #fa6c9f;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.button-on:hover{
+    /*ボタンの形状*/
+    border-color: transparent;
+    color: #fff;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #fa6c9f 0%, #ffe140 50%, #ff357f 100%);
+    background-size: 200% auto;
+    background-position: right center;
+    /*ボックスの影*/
+    box-shadow: 0 5px 10px rgba(250,108,159,0.4);
+}
+
+.button-off{
+    /*ボタンの形状*/
+    display: inline-block;
+    padding: 3px 30px;
+    border-radius:30px;
+    text-decoration: none;
+    border:1px solid #999999;
+    color: #999999;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.button-off:hover{
+    /*ボタンの形状*/
+    border-color:transparent;
+    color: #fff;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #999999 0%, #cccccc 50%, #444444 100%);
+    background-size: 200% auto;
+    background-position: right center;
+    /*ボックスの影*/
+    box-shadow: 0 5px 10px rgba(108,108,108,0.4);
+}
+
+.ribbon {
+   display: inline-block;
+   position: relative;
+   height: 45px;
+   text-align: center;
+   box-sizing: border-box;
+   -webkit-transform: rotate(-10deg) skew(-17deg,4deg);
+   transform: rotate(-10deg) skew(-17deg,4deg);
+ }
+ .ribbon:before {
+   content: '';
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   background: #eb9920;
+   bottom: -7px;
+   left: -15px;
+   z-index: -2;
+ }
+
+ .ribbon:after {
+   content: '';
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   background: #eb9920;
+   bottom: -10px;
+   right: -25px;
+   z-index: -2;
+ }
+
+ .ribbon h3 {
+   display: inline-block;
+   position: relative;
+   margin: 0;
+   padding: 0 20px;
+   line-height: 45px;
+   font-size: 18px;
+   color: white;
+   background: #f8aa37;
+ }
+ .ribbon h3:before {
+   position: absolute;
+   content: '';
+   top: 100%;
+   left: 0;
+   border: none;
+   border-bottom: solid 7px transparent;
+   border-right: solid 25px #c6821e;
+ }
+ .ribbon h3:after {
+   position: absolute;
+   content: '';
+   top: 100%;
+   right: 0;
+   border: none;
+   border-bottom: solid 10px transparent;
+   border-left: solid 15px #c6821e;
+ }

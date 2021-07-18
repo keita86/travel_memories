@@ -2,22 +2,22 @@
   <div class="container py-5">
     <div class="blog-box py-5 bg-white">
       <div class="container">
-        <div class="row offset-1">
-          <h1 class="midasi">Week Ranking</h1>
+        <div class="row d-flex justify-content-center">
+          <h1 class="title-text">Week Ranking</h1>
         </div>
         <div class="rank-time-box py-2 my-5 bg-white">
           <div class="row d-flex justify-content-center">
-            <h4 class="my-3">Select Time</h4>
+            <h4 class="title-text">Select Time</h4>
           </div>
-          <div class="row mb-3 d-flex justify-content-around">
-              <%= link_to daily_rank_path, class: "left btn btn-brackets" do %>
-                <h6>Today</h6>
+          <div class="row my-3 d-flex justify-content-around">
+              <%= link_to daily_rank_path, class: "left btn button-on" do %>
+                <h5>Today</h5>
               <% end %>
-              <%= link_to weekly_rank_path, class: "center btn btn-brackets" do %>
-                <h6>This week</h6>
+              <%= link_to weekly_rank_path, class: "center btn button-off" do %>
+                <h5>This week</h5>
               <% end %>
-              <%= link_to monthly_rank_path, class: "right btn btn-brackets" do %>
-                <h6>This month</h6>
+              <%= link_to monthly_rank_path, class: "right btn button-on" do %>
+                <h5>This month</h5>
               <% end %>
           </div>
         </div>
