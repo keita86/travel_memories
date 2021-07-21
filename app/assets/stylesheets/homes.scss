@@ -491,10 +491,16 @@ section {
 
 .haikei {
 	width: 100%;
-	height: 100vh;
+	height: 100;
 	background:linear-gradient(45deg, #fa6c9f, #ffe140, #ff357f);/*グラデーションを定義*/
 	background-size: 200% 200%;/*サイズを大きくひきのばす*/
 	animation: bggradient 20s ease infinite;
+}
+
+@media screen and (max-width:1200px) {
+  .haikei {
+    height: 100vh;
+  }
 }
 
 @keyframes bggradient{

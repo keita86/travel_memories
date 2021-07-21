@@ -1,44 +1,24 @@
-<div class="haikei2">
-<div class="container py-5">
-  <% if @blog.exists? %>
-  <div class="blog-box my-5 bg-light">
-    <div class="row my-4 offset-1">
-      <h2 class="midasi">Results Memory</h2>
-    </div>
+<div class="yohaku"></div>
+<% if @blog.exists? %>
+<h1 class="title-text">Memories</h1>
+<div class="box">
+  <ul class="gallery">
     <% @blog.each do |blog| %>
-    <div class="row mx-auto pb-5">
-      <div class="col">
-        <ul class="list-unstyled blog-box-item">
-          <li><h2>blog</h2></li>
-          <li class="mt-2">
-            <%= link_to blog_path(blog) do %>
-            <%= attachment_image_tag blog, :image, class: "blog-box-img" %>
-            <% end %>
-          </li>
-          <li class="my-2"><h2>Title</h2></li>
-          <li class="my-2"><h2>『<%= blog.title %>』</h2></li>
-          <li class="my-2"><h2>Description</h2></li>
-          <li class="my-2"><h4>「<%= blog.description %>」</h4></li>
-          <li class="my-2"><h2>Day</h2></li>
-          <li class="my-2"><h4>「<%= blog.created_at.strftime('%Y/%m/%d') %>」</h4></li>
-        </ul>
+    <li>
+      <div class="box-item">
+        <%= link_to blog_path(blog) do %>
+        <%= attachment_image_tag blog, :image %>
+        <% end %>
       </div>
-    </div>
+    </li>
     <% end %>
-  </div>
-  <% else %>
-  <div class="blog-box my-5 bg-light">
-    <div class="container py-5">
-      <div class="row my-4 offset-1">
-        <h2 class="midasi">Results Memory</h2>
-      </div>
-      <div class="blog-box-item">
-        <div class="row d-flex justify-content-center">
-          <h3>記録はありません</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
+  </ul>
 </div>
+<% else %>
+<h1 class="title-text">Memories</h1>
+<div class="box">
+  <div class="mt-5 d-flex justify-content-center">
+    <h3>記録はありません</h3>
+  </div>
 </div>
+<% end %>

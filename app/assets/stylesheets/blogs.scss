@@ -371,6 +371,7 @@
    border-bottom: solid 7px transparent;
    border-right: solid 25px #c6821e;
  }
+ 
  .ribbon h3:after {
    position: absolute;
    content: '';
@@ -380,3 +381,18 @@
    border-bottom: solid 10px transparent;
    border-left: solid 15px #c6821e;
  }
+ 
+.form-edit {
+  width: 600px;
+  text-align: center;
+  margin: 2em auto;
+  color: #666;
+  border-top: solid 6px #ffddbb;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+.title-text2{
+	padding-top: 20px;
+	font-family: 'Baskervville', serif;
+	text-align: center;
+}

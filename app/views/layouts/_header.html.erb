@@ -5,12 +5,12 @@
     <% if user_signed_in? %>
       <li class="form1">
         <a>
-          <form class="search" action="">
+          <div class="search">
           <%= form_with url: search_path, local: true, method: :get do |f| %>
             <%= f.text_field :word, class: "input bg-white", placeholder: "キーワード検索" %>
             <%= f.submit "Search", class: "button" %>
           <% end %>
-          </form>
+          </div>
         </a>
       </li>
       <li class="nav-text"><a><h3><%= link_to "Memory", blogs_path %></h3></a></li>

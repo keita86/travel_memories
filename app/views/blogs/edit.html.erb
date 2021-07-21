@@ -1,10 +1,10 @@
-<div class="haikei2">
-  <div class="container py-5">
+<div class="haikei">
+  <div class="container box-form">
     <div class="row">
-      <div class="col">
-        <div class="form-memory py-3 bg-white">
-          <div class="row my-4 offset-2">
-            <h2 class="midasi">Edit Memory</h2>
+      <div class="col mt-3">
+        <div class="form-edit py-2 bg-white">
+          <div class="my-4">
+            <h2 class="title-text2">Edit Memory</h2>
           </div>
           <%= render 'layouts/errors', obj: @blog %>
           <%= form_with model: @blog, local:true do |f| %>
