@@ -371,7 +371,7 @@
    border-bottom: solid 7px transparent;
    border-right: solid 25px #c6821e;
  }
- 
+
  .ribbon h3:after {
    position: absolute;
    content: '';
@@ -381,7 +381,7 @@
    border-bottom: solid 10px transparent;
    border-left: solid 15px #c6821e;
  }
- 
+
 .form-edit {
   width: 600px;
   text-align: center;
@@ -396,3 +396,51 @@
 	font-family: 'Baskervville', serif;
 	text-align: center;
 }
+
+.text-comfilm1 {
+  padding-top: 100px;
+}
+
+.haikei3 {
+  background-image: url(denger.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.comfilm-text {
+  text-shadow: 0 0 15px #000;
+  text-align: center;
+}
+
+.text-comfilm2 {
+  padding-top: 60px;
+}
+
+.button-d{
+    /*ボタンの形状*/
+    display: inline-block;
+    padding: 15px 60px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #FF0000;
+    color: #FF0000;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.4s ease-out;
+}
+
+/*hoverした際、グラデーションと影を付ける*/
+.button-d:hover{
+    /*ボタンの形状*/
+    border-color: transparent;
+    color: #fff;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #FF0000 0%, #FF0033 50%, #FF0066 100%);
+    background-size: 200% auto;
+    background-position: right center;
+    /*ボックスの影*/
+    box-shadow: 0 5px 10px rgba(250,108,159,0.4);
+}
+
