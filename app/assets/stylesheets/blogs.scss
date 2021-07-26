@@ -136,6 +136,18 @@
   height: 500px;
  }
 
+ @media only screen and (max-width: 768px) {
+	#map{
+		width: 600px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+	#map{
+		width: 400px;
+  }
+}
+
 
  .label {
    background-color: #ffddbb;
@@ -158,6 +170,18 @@
    margin: 0 auto;
    border-radius: 60px;
  }
+
+ @media only screen and (max-width: 768px) {
+	.blog-box-img{
+		width: 600px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+	.blog-box-img{
+		width: 400px;
+  }
+}
 
 .button-ss{
     /*ボタンの形状*/
@@ -241,6 +265,16 @@
     width: 350px;
 }
 
+.comment-item{
+  margin-left: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+	.comment-item{
+	  margin-left: 0;
+  }
+}
+
 .blog-box-item {
   text-align:center;
 }
@@ -268,6 +302,26 @@
    margin: 0 auto;
    border-radius: 30px;
  }
+
+@media only screen and (max-width: 768px) {
+	.rank-box{
+		width: 600px;
+  }
+
+  .rank-img{
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+	.rank-box{
+		width: 400px;
+  }
+
+  .rank-img{
+    width: 300px;
+  }
+}
 
 .button-on{
     /*ボタンの形状*/
