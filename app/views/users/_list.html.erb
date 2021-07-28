@@ -16,7 +16,6 @@
       Follower<%= user.followers.count %>
     </div>
     <div class="follow-button-area py-2">
-    <% unless current_user == User.guest_user %>
       <% if user.id == current_user.id %>
        <%= link_to "show", user_path(user), class: "button-s" %>
       <% else %>
@@ -26,7 +25,6 @@
           <%= link_to "Unfollow Now", user_relationships_path(user.id), method: :post, class: "button-n" %>
         <% end %>
       <% end %>
-    <% end %>
     </div>
   </div>
   <% end %>
