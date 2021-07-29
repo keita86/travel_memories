@@ -4,7 +4,7 @@
 
 
 .gallery{
-  columns: 3;/*段組みの数*/
+  columns: 4;/*段組みの数*/
   padding: 0 15px;/*ギャラリー左右に余白をつける*/
   margin: 0;
 }
@@ -29,7 +29,7 @@
 	vertical-align: bottom;/*画像の下にできる余白を削除*/}
 
 /*　横幅900px以下の段組み設定　*/
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1440px) {
 	.gallery{
 	columns: 3;
 	}
