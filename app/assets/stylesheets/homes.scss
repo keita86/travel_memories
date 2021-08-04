@@ -17,7 +17,7 @@
   width: 100%;
   height: 100vh;
   scroll-snap-type: y mandatory;
-  // overflow: scroll; /* .wrap内をスクロール可能にする。必要です */
+  overflow: scroll; /* .wrap内をスクロール可能にする。必要です */
   -webkit-overflow-scrolling: touch;
 }
 
